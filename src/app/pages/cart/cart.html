@@ -1,0 +1,224 @@
+<section class="cart-page py-5">
+    <div class="container">
+        <div class="section-head mb-4">
+            <p class="section-tag mb-1">Thực đơn BOX&amp;BITE</p>
+            <h1 class="section-title mb-0">Giỏ hàng của bạn</h1>
+        </div>
+
+        <div class="row g-4 align-items-start">
+            <div class="col-12 col-lg-8">
+                <div class="card-shell p-3 p-lg-4 mb-4">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h2 class="block-title mb-0">Món đã chọn</h2>
+                        <span class="count-badge">{{ cartItems.length }} món</span>
+                    </div>
+
+                    @if (cartItems.length) {
+                    <div class="cart-list">
+                        @for (item of cartItems; track item.cartId) {
+                        <article class="cart-item">
+                            <img [src]="item.image" [alt]="item.name" class="item-image"
+                                (error)="onImageError($event)" />
+
+                            <div class="item-body">
+                                <div class="d-flex align-items-start justify-content-between gap-2 mb-1">
+                                    <h3 class="item-name mb-0">{{ item.name }}</h3>
+                                    <button type="button" class="remove-btn" (click)="removeItem(item.cartId)">
+                                        <i class="bi bi-trash3"></i>
+                                        Xóa
+                                    </button>
+                                </div>
+
+                                <p class="item-options mb-2">
+                                    @if (item.selectedOptions.length) {
+                                    Tùy chọn: {{ item.selectedOptions.join(', ') }}
+                                    }
+                                    @if (!item.selectedOptions.length) {
+                                    Tùy chọn: Mặc định
+                                    }
+                                </p>
+
+                                <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+                                    <strong class="item-price">{{ item.price | number:'1.0-0':'vi-VN' }}₫</strong>
+
+                                    <div class="qty-control">
+                                        <button type="button" class="qty-btn"
+                                            (click)="decreaseQuantity(item)">-</button>
+                                        <span class="qty-value">{{ item.quantity }}</span>
+                                        <button type="button" class="qty-btn"
+                                            (click)="increaseQuantity(item)">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        }
+                    </div>
+                    }
+
+                    @if (!cartItems.length) {
+                    <div class="empty-state">Giỏ hàng đang trống. Hãy thêm món để tiếp tục đặt hàng.</div>
+                    }
+                </div>
+
+                <div class="card-shell p-3 p-lg-4 mb-4">
+                    <h2 class="block-title mb-3">Ghi chú cho đơn hàng</h2>
+                    <textarea class="form-control note-input" rows="3" [(ngModel)]="note"
+                        placeholder="Ví dụ: ít sốt cay, không hành..."></textarea>
+                </div>
+
+                <div class="card-shell p-3 p-lg-4 mb-4">
+                    <h2 class="block-title mb-3">Hình thức nhận hàng</h2>
+
+                    <div class="row g-3 mb-3">
+                        <div class="col-12 col-md-6">
+                            <button type="button" class="order-card w-100" [class.active]="orderType === 'delivery'"
+                                (click)="selectOrderType('delivery')">
+                                <i class="bi bi-truck"></i>
+                                <span>Giao tận nơi</span>
+                            </button>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <button type="button" class="order-card w-100" [class.active]="orderType === 'pickup'"
+                                (click)="selectOrderType('pickup')">
+                                <i class="bi bi-shop"></i>
+                                <span>Đến cửa hàng lấy</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="delivery-fields mb-3">
+                        <div class="mb-3">
+                            <label class="form-label">Họ và tên</label>
+                            <input type="text" class="form-control" [class.input-error]="isCustomerNameInvalid"
+                                [(ngModel)]="customerName" placeholder="Nhập họ tên người nhận" />
+                            @if (isCustomerNameInvalid) {
+                            <p class="field-error mb-0 mt-1">Vui lòng nhập họ và tên.</p>
+                            }
+                        </div>
+                        <div>
+                            <label class="form-label">Số điện thoại</label>
+                            <input type="tel" class="form-control" [class.input-error]="isPhoneInvalid"
+                                [(ngModel)]="phoneNumber" placeholder="Nhập số điện thoại" />
+                            @if (isPhoneInvalid) {
+                            <p class="field-error mb-0 mt-1">Vui lòng nhập số điện thoại.</p>
+                            }
+                        </div>
+                    </div>
+
+                    @if (orderType === 'delivery') {
+                    <div class="delivery-fields">
+                        <div class="mb-3">
+                            <label class="form-label">Địa chỉ giao hàng</label>
+                            <input type="text" class="form-control" [class.input-error]="isDeliveryAddressInvalid"
+                                [(ngModel)]="deliveryAddress" placeholder="Nhập địa chỉ của bạn" />
+                            @if (isDeliveryAddressInvalid) {
+                            <p class="field-error mb-0 mt-1">Vui lòng nhập địa chỉ giao hàng.</p>
+                            }
+                        </div>
+                        <div>
+                            <label class="form-label">Khung giờ giao hàng</label>
+                            <select class="form-control" [class.input-error]="isDeliveryTimeSlotInvalid"
+                                [(ngModel)]="deliveryTimeSlot">
+                                @for (slot of deliveryTimeSlots; track slot) {
+                                <option [value]="slot">{{ slot }}</option>
+                                }
+                            </select>
+                            @if (isDeliveryTimeSlotInvalid) {
+                            <p class="field-error mb-0 mt-1">Vui lòng chọn khung giờ giao hàng.</p>
+                            }
+                        </div>
+                    </div>
+                    }
+
+                    @if (orderType === 'pickup') {
+                    <div class="pickup-note">
+                        Đơn hàng sẽ được chuẩn bị trong khoảng 15 phút.
+                    </div>
+                    }
+                </div>
+
+                <div class="card-shell p-3 p-lg-4">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h2 class="block-title mb-0">Có thể bạn muốn thêm</h2>
+                    </div>
+
+                    <div class="row g-3 row-cols-2 row-cols-md-4">
+                        @for (food of recommendedFoods; track food.id) {
+                        <div class="col">
+                            <article class="recommend-card h-100">
+                                <img [src]="food.image" [alt]="food.name" class="recommend-image"
+                                    (error)="onImageError($event)" />
+                                <div class="recommend-body">
+                                    <h3 class="recommend-name mb-1">{{ food.name }}</h3>
+                                    <p class="recommend-price mb-2">{{ food.price | number:'1.0-0':'vi-VN' }}₫</p>
+                                    <button type="button" class="add-btn w-100" (click)="addRecommended(food)">
+                                        + Thêm
+                                    </button>
+                                </div>
+                            </article>
+                        </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-4">
+                <aside class="summary-card p-3 p-lg-4">
+                    <h2 class="block-title mb-3">Tóm tắt đơn hàng</h2>
+
+                    <div class="summary-line">
+                        <span>Tạm tính</span>
+                        <strong>{{ subtotal | number:'1.0-0':'vi-VN' }}₫</strong>
+                    </div>
+                    <div class="summary-line">
+                        <span>Phí giao hàng</span>
+                        <strong>{{ deliveryFee | number:'1.0-0':'vi-VN' }}₫</strong>
+                    </div>
+
+                    <hr class="summary-separator" />
+
+                    <div class="summary-line total">
+                        <span>Tổng cộng</span>
+                        <strong>{{ total | number:'1.0-0':'vi-VN' }}₫</strong>
+                    </div>
+
+                    <div class="payment-box mt-4">
+                        <p class="payment-title mb-2">Phương thức thanh toán</p>
+
+                        <label class="pay-option mb-2">
+                            <input type="radio" name="payment" [(ngModel)]="paymentMethod" value="cod" />
+                            <span>Thanh toán khi nhận hàng</span>
+                        </label>
+
+                        <label class="pay-option">
+                            <input type="radio" name="payment" [(ngModel)]="paymentMethod" value="bank" />
+                            <span>Chuyển khoản</span>
+                        </label>
+                    </div>
+
+                    <button type="button" class="checkout-btn w-100 mt-4" (click)="onCheckout()"
+                        [disabled]="isCheckoutDisabled">
+                        ĐẶT HÀNG NGAY
+                    </button>
+
+                    @if (checkoutMessage) {
+                    <p class="checkout-message mb-0 mt-2">{{ checkoutMessage }}</p>
+                    }
+                </aside>
+            </div>
+        </div>
+
+        @if (orderSuccessOpen) {
+        <div class="order-success-backdrop">
+            <div class="order-success-dialog text-center">
+                <div class="success-icon mb-3">
+                    <i class="bi bi-check2-circle" aria-hidden="true"></i>
+                </div>
+                <h3 class="mb-2">Đặt hàng thành công</h3>
+                <p class="mb-4">BOX&amp;BITE đã nhận đơn của bạn. Cảm ơn bạn đã tin tưởng đặt món.</p>
+                <button type="button" class="checkout-btn" (click)="completeOrder()">Hoàn tất</button>
+            </div>
+        </div>
+        }
+    </div>
+</section>

@@ -1,0 +1,214 @@
+<section class="product-detail-page py-5">
+    <div class="container">
+        <div class="section-head mb-4">
+            <p class="section-tag mb-1">Thực đơn BOX&amp;BITE</p>
+            <h1 class="section-title mb-0">Chi tiết sản phẩm</h1>
+        </div>
+
+        @if (loading) {
+        <div class="state-card">Đang tải dữ liệu sản phẩm...</div>
+        }
+
+        @if (!loading && errorMessage) {
+        <div class="state-card error">{{ errorMessage }}</div>
+        }
+
+        @if (!loading && !errorMessage && product) {
+        <div class="card-shell p-3 p-lg-4 mb-4">
+            <div class="row g-4 align-items-start">
+                <div class="col-12 col-lg-6">
+                    <div class="image-wrap">
+                        <img [src]="product.image" [alt]="product.name" class="product-image"
+                            (error)="onImageError($event)" />
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <h2 class="product-name mb-2">{{ product.name }}</h2>
+                    <p class="product-price mb-3">{{ product.price | currency:'VND':'symbol':'1.0-0':'vi-VN' }}</p>
+
+                    <div class="meta-row mb-4">
+                        <div class="rating-stars" aria-label="Đánh giá sản phẩm">
+                            @for (_ of getFilledStars(); track $index) {
+                            <i class="bi bi-star-fill"></i>
+                            }
+                            @for (_ of getEmptyStars(); track $index) {
+                            <i class="bi bi-star"></i>
+                            }
+                        </div>
+                        <span>{{ (product.rating ?? 0) | number:'1.1-1' }}</span>
+                        <span class="dot">•</span>
+                        <span>{{ product.reviewCount ?? 0 }} đánh giá</span>
+                        <span class="dot">•</span>
+                        <span>Đã bán {{ product.sold ?? 0 }}</span>
+                    </div>
+
+                    <div class="quantity-box mb-4">
+                        <p class="option-title mb-2">Số lượng</p>
+                        <div class="qty-control">
+                            <button type="button" class="qty-btn" (click)="changeQuantity(-1)"
+                                aria-label="Giảm số lượng">-</button>
+                            <span class="qty-value">{{ quantity }}</span>
+                            <button type="button" class="qty-btn" (click)="changeQuantity(1)"
+                                aria-label="Tăng số lượng">+</button>
+                        </div>
+                    </div>
+
+                    <div class="options-list mb-4">
+                        @if (optionGroups.length) {
+                        @for (group of optionGroups; track trackByOptionGroup($index, group)) {
+                        <div class="option-group">
+                            <p class="option-title mb-2">
+                                {{ group.option.label }}
+                                @if (group.option.required) {
+                                <span class="required-mark">*</span>
+                                }
+                            </p>
+
+                            @if (group.option.type === 'single') {
+                            <div class="option-items">
+                                @for (item of group.option.items; track trackByOptionItem($index, item)) {
+                                <label class="option-item">
+                                    <input type="radio" [name]="'option-' + group.key"
+                                        [checked]="isSingleSelected(group.key, item.name)"
+                                        (change)="selectSingleOption(group.key, item.name)" />
+                                    <span>
+                                        {{ item.name }}
+                                        @if (item.price > 0) {
+                                        <small>(+{{ item.price | currency:'VND':'symbol':'1.0-0':'vi-VN' }})</small>
+                                        }
+                                    </span>
+                                </label>
+                                }
+                            </div>
+                            }
+
+                            @if (group.option.type === 'multiple') {
+                            <div class="option-items">
+                                @for (item of group.option.items; track trackByOptionItem($index, item)) {
+                                <label class="option-item">
+                                    <input type="checkbox" [checked]="isMultipleSelected(group.key, item.name)"
+                                        (change)="toggleMultipleOption(group.key, item.name, $any($event.target).checked)" />
+                                    <span>
+                                        {{ item.name }}
+                                        @if (item.price > 0) {
+                                        <small>(+{{ item.price | currency:'VND':'symbol':'1.0-0':'vi-VN' }})</small>
+                                        }
+                                    </span>
+                                </label>
+                                }
+                            </div>
+                            }
+                        </div>
+                        }
+                        }
+
+                        @if (!optionGroups.length) {
+                        <div class="option-group">
+                            <p class="option-title mb-0">Sản phẩm này hiện chưa có tuỳ chọn thêm.</p>
+                        </div>
+                        }
+                    </div>
+
+                    <div class="buy-box">
+                        <div class="total-price mb-3">
+                            <span>Tổng tạm tính</span>
+                            <strong>{{ totalPrice | currency:'VND':'symbol':'1.0-0':'vi-VN' }}</strong>
+                        </div>
+
+                        <div class="action-row">
+                            <button type="button" class="btn cart-btn" (click)="addToCart()">Thêm vào giỏ hàng</button>
+                            <button type="button" class="btn buy-btn" (click)="buyNow()">Mua ngay</button>
+                        </div>
+
+                        @if (validationMessage) {
+                        <p class="validation-msg mb-0 mt-2">{{ validationMessage }}</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-shell p-3 p-lg-4 mb-4">
+            <ul class="nav nav-tabs info-tabs mb-3">
+                <li class="nav-item">
+                    <button type="button" class="nav-link" [class.active]="activeTab === 'description'"
+                        (click)="activeTab = 'description'">
+                        Mô tả
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="nav-link" [class.active]="activeTab === 'ingredients'"
+                        (click)="activeTab = 'ingredients'">
+                        Thành phần
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="nav-link" [class.active]="activeTab === 'reviews'"
+                        (click)="activeTab = 'reviews'">
+                        Đánh giá
+                    </button>
+                </li>
+            </ul>
+
+            @if (activeTab === 'description') {
+            <p class="tab-content-text mb-0">
+                {{ product.description || (product.name + ' là món ăn nổi bật và được chuẩn bị nóng hổi mỗi ngày.') }}
+            </p>
+            }
+
+            @if (activeTab === 'ingredients') {
+            <p class="tab-content-text mb-0">
+                @if (product.ingredients?.length) {
+                {{ product.ingredients?.join(', ') }}
+                }
+                @if (!product.ingredients?.length) {
+                Thành phần sản phẩm đang được cập nhật.
+                }
+            </p>
+            }
+
+            @if (activeTab === 'reviews') {
+            <p class="tab-content-text mb-0">
+                Sản phẩm hiện có {{ product.reviewCount ?? 0 }} lượt đánh giá với điểm trung bình
+                {{ (product.rating ?? 0) | number:'1.1-1' }}/5.
+            </p>
+            }
+        </div>
+
+        <div class="section-head mb-3">
+            <h3 class="section-title small mb-0">Món liên quan</h3>
+        </div>
+
+        <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-lg-4">
+            @for (item of relatedProducts; track trackByProduct($index, item)) {
+            <div class="col">
+                <article class="product-card h-100" role="button" tabindex="0" (click)="openRelatedProduct(item.id)"
+                    (keydown.enter)="openRelatedProduct(item.id)" (keydown.space)="openRelatedProduct(item.id)">
+                    <img [src]="item.image" [alt]="item.name" class="product-thumb" (error)="onImageError($event)" />
+                    <div class="product-body">
+                        <h4 class="related-name mb-1">{{ item.name }}</h4>
+                        <p class="related-price mb-0">{{ item.price | currency:'VND':'symbol':'1.0-0':'vi-VN' }}</p>
+                    </div>
+                </article>
+            </div>
+            }
+        </div>
+        }
+
+        @if (buyNowPopupOpen) {
+        <div class="buy-now-backdrop" (click)="closeBuyNowPopup()">
+            <div class="buy-now-dialog" role="dialog" aria-modal="true" aria-label="Mua ngay"
+                (click)="onBuyNowDialogClick($event)">
+                <button type="button" class="buy-now-close" (click)="closeBuyNowPopup()" aria-label="Đóng">
+                    <i class="bi bi-x-lg" aria-hidden="true"></i>
+                </button>
+
+                <ng-container [ngComponentOutlet]="cartComponent"
+                    [ngComponentOutletInputs]="{ isolatedMode: true, initialItems: buyNowCartItems }">
+                </ng-container>
+            </div>
+        </div>
+        }
+    </div>
+</section>

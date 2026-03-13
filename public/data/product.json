@@ -1,0 +1,101 @@
+{
+    "category": {
+        "id": "burger",
+        "name": "Hamburger",
+        "products": [
+            {
+                "id": "BG001",
+                "name": "Burger bò",
+                "price": 35000,
+                "image": "https://example.com/images/burger-bo.jpg",
+                "options": {
+                    "sauce": {
+                        "label": "Chọn sốt",
+                        "type": "single",
+                        "required": true,
+                        "items": [
+                            {
+                                "name": "Sốt phô mai",
+                                "price": 0
+                            },
+                            {
+                                "name": "Sốt BBQ",
+                                "price": 0
+                            },
+                            {
+                                "name": "Sốt cay",
+                                "price": 0
+                            },
+                            {
+                                "name": "Sốt tiêu đen",
+                                "price": 0
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "id": "BG002",
+                "name": "Burger gà giòn",
+                "price": 35000,
+                "image": "https://example.com/images/burger-ga.jpg",
+                "options": {
+                    "sauce": {
+                        "label": "Chọn sốt",
+                        "type": "single",
+                        "required": true,
+                        "items": [
+                            {
+                                "name": "Sốt phô mai",
+                                "price": 0
+                            },
+                            {
+                                "name": "Sốt BBQ",
+                                "price": 0
+                            },
+                            {
+                                "name": "Sốt cay",
+                                "price": 0
+                            },
+                            {
+                                "name": "Sốt tiêu đen",
+                                "price": 0
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "id": "BG003",
+                "name": "Burger tôm",
+                "price": 35000,
+                "image": "https://example.com/images/burger-tom.jpg",
+                "options": {
+                    "sauce": {
+                        "label": "Chọn sốt",
+                        "type": "single",
+                        "required": true,
+                        "items": [
+                            {
+                                "name": "Sốt phô mai",
+                                "price": 0
+                            },
+                            {
+                                "name": "Sốt BBQ",
+                                "price": 0
+                            },
+                            {
+                                "name": "Sốt cay",
+                                "price": 0
+                            },
+                            {
+                                "name": "Sốt tiêu đen",
+                                "price": 0
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,99 @@
+<section class="products-page py-5">
+    <div class="container">
+        <div class="section-head mb-4">
+            <p class="section-tag mb-1">Hamburger - Gà rán - Mỳ Ý - Nước ngọt - Kem</p>
+            <h1 class="section-title mb-0">Thực đơn BOX&amp;BITE</h1>
+        </div>
+
+        @if (loading) {
+        <div class="state-card">Đang tải dữ liệu sản phẩm...</div>
+        }
+
+        @if (!loading && errorMessage) {
+        <div class="state-card error">{{ errorMessage }}</div>
+        }
+
+        @if (!loading && !errorMessage) {
+        <div class="category-strip mb-4">
+            <div class="category-track">
+                <button type="button" class="category-item" [class.active]="selectedCategoryId === 'all'"
+                    (click)="selectCategory('all')">
+                    <div class="category-thumb icon-thumb">
+                        <i class="bi bi-stars" aria-hidden="true"></i>
+                    </div>
+                    <span>Món ngon phải thử</span>
+                </button>
+
+                @for (category of categoryMenuItems; track category.id) {
+                <button type="button" class="category-item" [class.active]="selectedCategoryId === category.id"
+                    (click)="selectCategory(category.id)">
+                    <div class="category-thumb">
+                        <img [src]="category.image" [alt]="category.name" (error)="onImageError($event)" />
+                    </div>
+                    <span>{{ category.name }}</span>
+                </button>
+                }
+            </div>
+        </div>
+
+        <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-lg-3">
+            @for (item of filteredProducts; track item.id) {
+            <div class="col">
+                <article class="product-card h-100" role="button" tabindex="0" (click)="viewProductDetail(item.id)"
+                    (keydown.enter)="viewProductDetail(item.id)" (keydown.space)="viewProductDetail(item.id)">
+                    <img [src]="item.image" [alt]="item.name" class="product-image" (error)="onImageError($event)" />
+
+                    <div class="product-body">
+                        <div class="mb-2">
+                            <h2 class="product-name mb-0">{{ item.name }}</h2>
+                        </div>
+
+                        @if (item.options?.sauce?.items?.length) {
+                        <p class="product-meta mb-3">
+                            {{ item.options?.sauce?.label }}: {{ item.options?.sauce?.items?.length }} lựa chọn
+                        </p>
+                        }
+
+                        @if (item.description) {
+                        <p class="product-meta mb-2">{{ item.description }}</p>
+                        }
+
+                        @if (item.ingredients?.length) {
+                        <p class="product-meta mb-3">Thành phần: {{ item.ingredients?.join(', ') }}</p>
+                        }
+
+                        <div class="product-bottom">
+                            <strong>{{ item.price | currency:'VND':'symbol':'1.0-0':'vi-VN' }}</strong>
+                            <button type="button" class="add-btn" aria-label="Thêm sản phẩm vào giỏ"
+                                (click)="onAddClick($event, item.id)">
+                                <i class="bi bi-cart-plus" aria-hidden="true"></i>
+                                Thêm
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            }
+        </div>
+
+        @if (!filteredProducts.length) {
+        <div class="state-card mt-4">Không có sản phẩm phù hợp trong nhóm này.</div>
+        }
+        }
+
+        @if (quickViewOpen && quickViewProductId) {
+        <div class="quickview-backdrop" (click)="closeQuickView()">
+            <div class="quickview-dialog" role="dialog" aria-modal="true" aria-label="Chi tiết sản phẩm"
+                (click)="onQuickViewContentClick($event)">
+                <button type="button" class="quickview-close" (click)="closeQuickView()" aria-label="Đóng">
+                    <i class="bi bi-x-lg" aria-hidden="true"></i>
+                </button>
+
+                <ng-container [ngComponentOutlet]="productDetailComponent"
+                    [ngComponentOutletInputs]="{ productId: quickViewProductId, popupMode: true }">
+                </ng-container>
+            </div>
+        </div>
+        }
+    </div>
+</section>

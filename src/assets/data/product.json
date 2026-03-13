@@ -1,0 +1,620 @@
+[
+    {
+        "category": {
+            "id": "burger",
+            "name": "Hamburger",
+            "products": [
+                {
+                    "id": "BG001",
+                    "name": "Burger bò",
+                    "price": 35000,
+                    "image": "https://example.com/images/burger-bo.jpg",
+                    "description": "Burger bò với nhân thịt bò đậm vị, rau tươi và sốt đặc trưng BOX&BITE.",
+                    "ingredients": [
+                        "Bánh mì brioche",
+                        "Thịt bò nướng",
+                        "Xà lách",
+                        "Cà chua",
+                        "Phô mai lát"
+                    ],
+                    "rating": 4.8,
+                    "reviewCount": 124,
+                    "sold": 560,
+                    "options": {
+                        "sauce": {
+                            "label": "Chọn sốt",
+                            "type": "single",
+                            "required": true,
+                            "items": [
+                                {
+                                    "name": "Sốt phô mai",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "Sốt BBQ",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "Sốt cay",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "Sốt tiêu đen",
+                                    "price": 0
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "id": "BG002",
+                    "name": "Burger gà giòn",
+                    "price": 35000,
+                    "image": "https://example.com/images/burger-ga.jpg",
+                    "description": "Burger gà giòn rụm bên ngoài, mềm bên trong, kết hợp sốt thơm béo dễ ăn.",
+                    "ingredients": [
+                        "Bánh mì brioche",
+                        "Phi lê gà giòn",
+                        "Rau xà lách",
+                        "Dưa leo muối",
+                        "Sốt mayo"
+                    ],
+                    "rating": 4.7,
+                    "reviewCount": 98,
+                    "sold": 420,
+                    "options": {
+                        "sauce": {
+                            "label": "Chọn sốt",
+                            "type": "single",
+                            "required": true,
+                            "items": [
+                                {
+                                    "name": "Sốt phô mai",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "Sốt BBQ",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "Sốt cay",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "Sốt tiêu đen",
+                                    "price": 0
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "id": "BG003",
+                    "name": "Burger tôm",
+                    "price": 35000,
+                    "image": "https://example.com/images/burger-tom.jpg",
+                    "description": "Burger tôm chiên vàng với vị ngọt nhẹ tự nhiên, phù hợp cho bữa ăn nhanh tiện lợi.",
+                    "ingredients": [
+                        "Bánh mì brioche",
+                        "Tôm tẩm bột chiên",
+                        "Xà lách tím",
+                        "Hành tây",
+                        "Sốt tartar"
+                    ],
+                    "rating": 4.6,
+                    "reviewCount": 75,
+                    "sold": 310,
+                    "options": {
+                        "sauce": {
+                            "label": "Chọn sốt",
+                            "type": "single",
+                            "required": true,
+                            "items": [
+                                {
+                                    "name": "Sốt phô mai",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "Sốt BBQ",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "Sốt cay",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "Sốt tiêu đen",
+                                    "price": 0
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "category": {
+            "id": "pasta",
+            "name": "Mỳ Ý",
+            "products": [
+                {
+                    "id": "PA001",
+                    "name": "Mỳ Ý sốt bò bằm",
+                    "price": 40000,
+                    "image": "https://example.com/images/pasta-bo-bam.jpg",
+                    "description": "Mỳ Ý với sốt bò bằm đậm đà, nấu cùng cà chua và gia vị Ý.",
+                    "ingredients": [
+                        "Mỳ Ý",
+                        "Thịt bò bằm",
+                        "Sốt cà chua",
+                        "Hành tây",
+                        "Phô mai parmesan"
+                    ],
+                    "rating": 4.7,
+                    "reviewCount": 98,
+                    "sold": 420
+                },
+                {
+                    "id": "PA002",
+                    "name": "Mỳ Ý gà giòn",
+                    "price": 40000,
+                    "image": "https://example.com/images/pasta-ga-gion.jpg",
+                    "description": "Mỳ Ý ăn kèm gà chiên giòn, sốt cà chua đặc trưng.",
+                    "ingredients": [
+                        "Mỳ Ý",
+                        "Gà chiên giòn",
+                        "Sốt cà chua",
+                        "Phô mai parmesan"
+                    ],
+                    "rating": 4.6,
+                    "reviewCount": 75,
+                    "sold": 310
+                },
+                {
+                    "id": "PA003",
+                    "name": "Mỳ Ý sốt kem nấm",
+                    "price": 40000,
+                    "image": "https://example.com/images/pasta-kem-nam.jpg",
+                    "description": "Mỳ Ý với sốt kem nấm béo ngậy, thơm mùi nấm và bơ.",
+                    "ingredients": [
+                        "Mỳ Ý",
+                        "Nấm",
+                        "Kem tươi",
+                        "Bơ",
+                        "Phô mai parmesan"
+                    ],
+                    "rating": 4.8,
+                    "reviewCount": 110,
+                    "sold": 390
+                }
+            ]
+        }
+    },
+    {
+        "category": {
+            "id": "fried-chicken",
+            "name": "Gà rán",
+            "products": [
+                {
+                    "id": "FC001",
+                    "name": "Gà rán truyền thống (1 miếng)",
+                    "price": 30000,
+                    "image": "https://example.com/images/ga-ran-truyen-thong.jpg",
+                    "description": "Gà rán truyền thống giòn rụm bên ngoài, mềm mọng bên trong.",
+                    "ingredients": [
+                        "Đùi gà",
+                        "Bột chiên giòn",
+                        "Gia vị đặc trưng BOX&BITE"
+                    ],
+                    "rating": 4.7,
+                    "reviewCount": 95,
+                    "sold": 410,
+                    "options": {
+                        "sauce": {
+                            "label": "Chọn sốt",
+                            "type": "single",
+                            "required": true,
+                            "items": [
+                                {
+                                    "name": "Sốt phô mai",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "Sốt BBQ",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "Sốt cay",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "Sốt tiêu đen",
+                                    "price": 0
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "id": "FC002",
+                    "name": "Gà rán siêu giòn (1 miếng)",
+                    "price": 33000,
+                    "image": "https://example.com/images/ga-ran-sieu-gion.jpg",
+                    "description": "Gà rán lớp vỏ siêu giòn, đậm vị, ăn kèm sốt tùy chọn.",
+                    "ingredients": [
+                        "Đùi gà",
+                        "Bột chiên siêu giòn",
+                        "Gia vị đặc biệt"
+                    ],
+                    "rating": 4.8,
+                    "reviewCount": 120,
+                    "sold": 530,
+                    "options": {
+                        "sauce": {
+                            "label": "Chọn sốt",
+                            "type": "single",
+                            "required": true,
+                            "items": [
+                                {
+                                    "name": "Sốt phô mai",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "Sốt BBQ",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "Sốt cay",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "Sốt tiêu đen",
+                                    "price": 0
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "category": {
+            "id": "fries",
+            "name": "Khoai tây chiên",
+            "products": [
+                {
+                    "id": "FR001",
+                    "name": "Khoai tây chiên",
+                    "price": 20000,
+                    "image": "https://example.com/images/khoai-tay-chien.jpg",
+                    "description": "Khoai tây chiên vàng giòn, có thể chọn kích thước phần ăn.",
+                    "ingredients": [
+                        "Khoai tây",
+                        "Muối",
+                        "Dầu chiên"
+                    ],
+                    "rating": 4.7,
+                    "reviewCount": 88,
+                    "sold": 370,
+                    "options": {
+                        "size": {
+                            "label": "Chọn size",
+                            "type": "single",
+                            "required": true,
+                            "items": [
+                                {
+                                    "name": "Thường",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "Lớn",
+                                    "price": 5000
+                                },
+                                {
+                                    "name": "Siêu lớn",
+                                    "price": 10000
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "id": "FR002",
+                    "name": "Khoai tây lắc phô mai",
+                    "price": 25000,
+                    "image": "https://example.com/images/khoai-tay-lac-pho-mai.jpg",
+                    "description": "Khoai tây chiên lắc phô mai thơm béo, có thể chọn kích thước.",
+                    "ingredients": [
+                        "Khoai tây",
+                        "Bột phô mai",
+                        "Muối",
+                        "Dầu chiên"
+                    ],
+                    "rating": 4.8,
+                    "reviewCount": 102,
+                    "sold": 420,
+                    "options": {
+                        "size": {
+                            "label": "Chọn size",
+                            "type": "single",
+                            "required": true,
+                            "items": [
+                                {
+                                    "name": "Thường",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "Lớn",
+                                    "price": 5000
+                                },
+                                {
+                                    "name": "Siêu lớn",
+                                    "price": 10000
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "category": {
+            "id": "ice-cream",
+            "name": "Kem",
+            "products": [
+                {
+                    "id": "IC001",
+                    "name": "Kem vani",
+                    "price": 15000,
+                    "image": "https://example.com/images/kem-vani.jpg",
+                    "description": "Kem vani mát lạnh, vị ngọt nhẹ.",
+                    "rating": 4.7,
+                    "reviewCount": 40,
+                    "sold": 120
+                },
+                {
+                    "id": "IC002",
+                    "name": "Kem socola",
+                    "price": 15000,
+                    "image": "https://example.com/images/kem-socola.jpg",
+                    "description": "Kem socola đậm vị cacao.",
+                    "rating": 4.8,
+                    "reviewCount": 55,
+                    "sold": 140
+                },
+                {
+                    "id": "IC003",
+                    "name": "Kem matcha",
+                    "price": 15000,
+                    "image": "https://example.com/images/kem-matcha.jpg",
+                    "description": "Kem matcha thơm vị trà xanh.",
+                    "rating": 4.6,
+                    "reviewCount": 32,
+                    "sold": 90
+                },
+                {
+                    "id": "IC004",
+                    "name": "Kem mix",
+                    "price": 20000,
+                    "image": "https://example.com/images/kem-mix.jpg",
+                    "description": "Kem mix 2 vị tùy chọn.",
+                    "rating": 4.9,
+                    "reviewCount": 70,
+                    "sold": 180,
+                    "options": {
+                        "flavor": {
+                            "label": "Chọn 2 hoặc 3 vị kem",
+                            "type": "multiple",
+                            "required": true,
+                            "max": 2,
+                            "items": [
+                                {
+                                    "name": "Vani",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "Socola",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "Matcha",
+                                    "price": 0
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "category": {
+            "id": "drinks",
+            "name": "Thức uống",
+            "products": [
+                {
+                    "id": "DR001",
+                    "name": "Nước ngọt có gas",
+                    "price": 15000,
+                    "image": "https://example.com/images/nuoc-ngot.jpg",
+                    "description": "Nước ngọt có gas mát lạnh.",
+                    "rating": 4.6,
+                    "reviewCount": 80,
+                    "sold": 350,
+                    "options": {
+                        "drink": {
+                            "label": "Chọn loại",
+                            "type": "single",
+                            "required": true,
+                            "items": [
+                                {
+                                    "name": "Coca",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "Pepsi",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "Sprite",
+                                    "price": 0
+                                }
+                            ]
+                        },
+                        "size": {
+                            "label": "Chọn size",
+                            "type": "single",
+                            "required": true,
+                            "items": [
+                                {
+                                    "name": "Thường",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "Lớn",
+                                    "price": 5000
+                                },
+                                {
+                                    "name": "Siêu lớn",
+                                    "price": 10000
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "id": "DR002",
+                    "name": "Trà trái cây",
+                    "price": 20000,
+                    "image": "https://example.com/images/tra-trai-cay.jpg",
+                    "description": "Trà trái cây thanh mát.",
+                    "rating": 4.7,
+                    "reviewCount": 65,
+                    "sold": 210,
+                    "options": {
+                        "size": {
+                            "label": "Chọn size",
+                            "type": "single",
+                            "required": true,
+                            "items": [
+                                {
+                                    "name": "Thường",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "Lớn",
+                                    "price": 5000
+                                },
+                                {
+                                    "name": "Siêu lớn",
+                                    "price": 10000
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "id": "DR003",
+                    "name": "Trà sữa truyền thống",
+                    "price": 20000,
+                    "image": "https://example.com/images/tra-sua.jpg",
+                    "description": "Trà sữa vị truyền thống.",
+                    "rating": 4.8,
+                    "reviewCount": 90,
+                    "sold": 300,
+                    "options": {
+                        "size": {
+                            "label": "Chọn size",
+                            "type": "single",
+                            "required": true,
+                            "items": [
+                                {
+                                    "name": "Thường",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "Lớn",
+                                    "price": 5000
+                                },
+                                {
+                                    "name": "Siêu lớn",
+                                    "price": 10000
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "id": "DR004",
+                    "name": "Trà sữa topping",
+                    "price": 25000,
+                    "image": "https://example.com/images/tra-sua-topping.jpg",
+                    "description": "Trà sữa kèm topping hấp dẫn.",
+                    "rating": 4.9,
+                    "reviewCount": 120,
+                    "sold": 420,
+                    "options": {
+                        "size": {
+                            "label": "Chọn size",
+                            "type": "single",
+                            "required": true,
+                            "items": [
+                                {
+                                    "name": "Thường",
+                                    "price": 0
+                                },
+                                {
+                                    "name": "Lớn",
+                                    "price": 5000
+                                },
+                                {
+                                    "name": "Siêu lớn",
+                                    "price": 10000
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "category": {
+            "id": "extra-sauce",
+            "name": "Sốt thêm",
+            "products": [
+                {
+                    "id": "SA001",
+                    "name": "Sốt phô mai",
+                    "price": 5000,
+                    "image": "https://example.com/images/sauce-cheese.jpg",
+                    "description": "Sốt phô mai béo ngậy."
+                },
+                {
+                    "id": "SA002",
+                    "name": "Sốt BBQ",
+                    "price": 5000,
+                    "image": "https://example.com/images/sauce-bbq.jpg",
+                    "description": "Sốt BBQ đậm vị."
+                },
+                {
+                    "id": "SA003",
+                    "name": "Sốt cay",
+                    "price": 5000,
+                    "image": "https://example.com/images/sauce-spicy.jpg",
+                    "description": "Sốt cay kích thích vị giác."
+                },
+                {
+                    "id": "SA004",
+                    "name": "Sốt tiêu đen",
+                    "price": 5000,
+                    "image": "https://example.com/images/sauce-blackpepper.jpg",
+                    "description": "Sốt tiêu đen thơm nồng."
+                }
+            ]
+        }
+    }
+]

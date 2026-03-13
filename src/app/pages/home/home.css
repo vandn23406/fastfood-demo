@@ -1,0 +1,362 @@
+.home-page {
+    --primary: #d88b2e;
+    --secondary: #993d29;
+    --bg: #f3edd6;
+    --text: #3e1b12;
+    --card: #ffffff;
+    --shadow: 0 12px 30px rgba(62, 27, 18, 0.1);
+    --radius-xl: 28px;
+    --radius-lg: 20px;
+    --radius-md: 14px;
+
+    background: var(--bg);
+    color: var(--text);
+}
+
+.hero-tag {
+    color: var(--secondary);
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}
+
+.hero-title {
+    font-size: clamp(2rem, 3.3vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.hero-subtitle {
+    font-size: 1.05rem;
+    max-width: 540px;
+    color: rgba(62, 27, 18, 0.9);
+}
+
+.btn {
+    border-radius: 999px;
+    padding: 0.7rem 1.35rem;
+    font-weight: 600;
+}
+
+.btn-brand {
+    background: var(--primary);
+    color: #fff;
+    border: 1px solid var(--primary);
+}
+
+.btn-brand:hover {
+    background: var(--secondary);
+    border-color: var(--secondary);
+    color: #fff;
+}
+
+.btn-outline-brand {
+    background: transparent;
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+}
+
+.btn-outline-brand:hover {
+    background: var(--secondary);
+    color: #fff;
+}
+
+.hero-image-card {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background: var(--card);
+    box-shadow: var(--shadow);
+    min-height: 380px;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+    object-fit: cover;
+    display: block;
+}
+
+.feature-list {
+    min-width: 210px;
+}
+
+.feature-item {
+    background: var(--card);
+    border-radius: var(--radius-md);
+    padding: 12px;
+    box-shadow: 0 10px 22px rgba(62, 27, 18, 0.08);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.feature-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(216, 139, 46, 0.18);
+    color: var(--secondary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.feature-title {
+    font-weight: 700;
+}
+
+.feature-item small {
+    color: rgba(62, 27, 18, 0.75);
+}
+
+.mini-card,
+.product-card,
+.popular-card,
+.about-card {
+    background: var(--card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mini-card:hover,
+.product-card:hover,
+.popular-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 34px rgba(62, 27, 18, 0.14);
+}
+
+.mini-card-image,
+.product-image,
+.popular-image,
+.about-image,
+.promo-image {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.mini-card-image {
+    height: 180px;
+}
+
+.mini-card-body {
+    padding: 14px;
+}
+
+.mini-card-body h3 {
+    font-size: 1.05rem;
+    margin: 0 0 10px;
+    font-weight: 700;
+}
+
+.mini-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+.icon-btn,
+.fav-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid rgba(153, 61, 41, 0.25);
+    background: #fff;
+    color: var(--secondary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.icon-btn:hover,
+.fav-btn:hover {
+    background: var(--secondary);
+    border-color: var(--secondary);
+    color: #fff;
+}
+
+.promotion-section .promo-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+}
+
+.promo-large {
+    min-height: 320px;
+}
+
+.promo-small {
+    min-height: 154px;
+}
+
+.promo-image {
+    height: 100%;
+    min-height: inherit;
+}
+
+.promo-overlay {
+    position: absolute;
+    inset: 0;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #fff;
+    background: linear-gradient(145deg, rgba(62, 27, 18, 0.72), rgba(62, 27, 18, 0.2));
+}
+
+.promo-overlay h3,
+.promo-overlay h4 {
+    margin: 0;
+    font-weight: 800;
+}
+
+.promo-overlay p {
+    margin: 0;
+    opacity: 0.92;
+}
+
+.section-title {
+    font-size: clamp(1.6rem, 2.4vw, 2.35rem);
+    font-weight: 800;
+    color: var(--text);
+}
+
+.section-link {
+    text-decoration: none;
+    color: var(--secondary);
+    font-weight: 700;
+}
+
+.section-link:hover {
+    color: var(--primary);
+}
+
+.product-image {
+    height: 190px;
+}
+
+.product-body {
+    padding: 15px;
+}
+
+.product-body h3 {
+    margin: 0;
+    font-size: 1.08rem;
+    font-weight: 700;
+}
+
+.product-body p {
+    margin: 10px 0 14px;
+    color: rgba(62, 27, 18, 0.78);
+    font-size: 0.92rem;
+    min-height: 42px;
+}
+
+.product-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-bottom strong {
+    color: var(--secondary);
+}
+
+.about-card {
+    padding: clamp(16px, 3vw, 26px);
+}
+
+.about-image {
+    border-radius: var(--radius-lg);
+    height: 350px;
+}
+
+.about-text {
+    font-size: 1.02rem;
+    color: rgba(62, 27, 18, 0.9);
+}
+
+.stat-card {
+    background: rgba(216, 139, 46, 0.12);
+    border-radius: var(--radius-md);
+    padding: 12px;
+}
+
+.stat-card strong {
+    display: block;
+    color: var(--secondary);
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.stat-card span {
+    color: rgba(62, 27, 18, 0.8);
+    font-size: 0.9rem;
+}
+
+.popular-image {
+    height: 210px;
+}
+
+.popular-body {
+    padding: 14px;
+}
+
+.popular-body h3 {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.popular-body p {
+    margin: 0;
+    color: rgba(62, 27, 18, 0.78);
+}
+
+@media (max-width: 991.98px) {
+    .hero-visual {
+        flex-direction: column;
+    }
+
+    .feature-list {
+        min-width: 100%;
+    }
+
+    .promo-large {
+        min-height: 280px;
+    }
+
+    .promo-small {
+        min-height: 170px;
+    }
+}
+
+@media (max-width: 575.98px) {
+
+    .hero-section,
+    .mini-foods,
+    .promotion-section,
+    .best-products,
+    .about-section,
+    .popular-section {
+        padding-bottom: 2.3rem !important;
+    }
+
+    .hero-image-card,
+    .hero-image {
+        min-height: 280px;
+    }
+
+    .section-head {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 8px;
+    }
+}
