@@ -1,6 +1,6 @@
 [build]
   command = "npm install && npm run build"
-  publish = "dist/my-app"
+  publish = "dist/my-app/browser"
 
 [build.environment]
   NODE_VERSION = "18"
