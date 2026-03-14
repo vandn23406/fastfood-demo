@@ -6,6 +6,7 @@ import { Products } from './pages/products/products';
 import { Combo } from './pages/combo/combo';
 import { ComboDetail } from './pages/combo-detail/combo-detail';
 import { Promotion } from './pages/promotion/promotion';
+import { AboutUs } from './pages/about-us/about-us';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -15,6 +16,7 @@ export const routes: Routes = [
     { path: 'combo-detail/:id', component: ComboDetail },
     { path: 'combo-detail', component: ComboDetail },
     { path: 'cart', component: Cart },
+    { path: 'about-us', component: AboutUs },
     { path: 'product-detail/:id', component: ProductDetail },
     { path: 'product-detail', component: ProductDetail },
     { path: 'promotion', component: Promotion },

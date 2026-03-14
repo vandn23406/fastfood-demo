@@ -1,0 +1,108 @@
+<section class="about-page py-5">
+    <div class="container">
+        <header class="section-head mb-4">
+            <p class="section-tag mb-1">1.3. Giới thiệu cửa hàng</p>
+            <h1 class="section-title mb-2">Về BOX &amp; BITE</h1>
+            <p class="section-lead mb-0">Tổng quan thương hiệu, định hướng phát triển và danh mục sản phẩm cốt lõi.</p>
+        </header>
+
+        <article class="info-card mb-4">
+            <h2 class="card-title">1.3.1. Giới thiệu</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <h3>Mô hình kinh doanh</h3>
+                    <p>{{ introduction.businessModel }}</p>
+                </div>
+                <div class="info-item">
+                    <h3>Khách hàng mục tiêu</h3>
+                    <p>{{ introduction.targetCustomers }}</p>
+                </div>
+                <div class="info-item">
+                    <h3>Danh mục sản phẩm chính</h3>
+                    <p>{{ introduction.productCategories }}</p>
+                </div>
+                <div class="info-item">
+                    <h3>Thông điệp / Slogan</h3>
+                    <p class="highlight-text">{{ introduction.slogan }}</p>
+                </div>
+                <div class="info-item full">
+                    <h3>Hình thức bán hàng</h3>
+                    <p>{{ introduction.salesChannels }}</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="info-card mb-4">
+            <h2 class="card-title">1.3.2. Tổng quan cửa hàng</h2>
+            <div class="row g-4 align-items-stretch">
+                <div class="col-12 col-lg-5">
+                    <div class="sub-card h-100">
+                        <h3 class="sub-title">a. Logo</h3>
+                        <div class="logo-preview mb-3">
+                            <img [src]="logoInfo.image" alt="Logo BOX & BITE" />
+                        </div>
+                        <p class="mb-0">{{ logoInfo.meaning }}</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-7">
+                    <div class="sub-card h-100">
+                        <h3 class="sub-title">b. Tên thương hiệu</h3>
+                        <p><strong>Tên:</strong> {{ brandInfo.name }}</p>
+                        <p>{{ brandInfo.meaning }}</p>
+                        <p class="mb-0">{{ brandInfo.pronunciation }}</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="info-card mb-4">
+            <h2 class="card-title">1.3.3. Tầm nhìn - Sứ mệnh</h2>
+            <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                    <div class="sub-card h-100">
+                        <h3 class="sub-title">a. Tầm nhìn</h3>
+                        <ul class="feature-list mb-0">
+                            @for (item of vision; track item) {
+                            <li>{{ item }}</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="sub-card h-100">
+                        <h3 class="sub-title">b. Sứ mệnh</h3>
+                        <ul class="feature-list mb-0">
+                            @for (item of mission; track item) {
+                            <li>{{ item }}</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="info-card">
+            <h2 class="card-title">1.3.4. Sản phẩm cung cấp</h2>
+            <div class="sub-card mb-3">
+                <h3 class="sub-title">a. Mô tả sản phẩm</h3>
+                <p>{{ productOverview.summary }}</p>
+                <ul class="feature-list mb-0">
+                    @for (item of productOverview.highlights; track item) {
+                    <li>{{ item }}</li>
+                    }
+                </ul>
+            </div>
+
+            <div class="sub-card">
+                <h3 class="sub-title">b. Lý do chọn sản phẩm</h3>
+                <ul class="feature-list mb-0">
+                    @for (item of reasons; track item) {
+                    <li>{{ item }}</li>
+                    }
+                </ul>
+            </div>
+        </article>
+    </div>
+</section>
