@@ -7,7 +7,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding-top: 64px;
+    padding-top: 96px;
 }
 
 .app-content {

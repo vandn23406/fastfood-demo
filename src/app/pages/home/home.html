@@ -34,7 +34,8 @@
             <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-lg-3">
                 @for (item of categories; track trackByCategory($index, item)) {
                 <div class="col">
-                    <a href="/products" class="category-card h-100 text-decoration-none">
+                    <a [routerLink]="['/products']" [queryParams]="{ category: item.id }"
+                        class="category-card h-100 text-decoration-none">
                         <img [src]="item.image" [alt]="item.name" class="category-image"
                             (error)="onImageError($event)" />
                         <div class="category-body">

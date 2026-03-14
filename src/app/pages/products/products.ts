@@ -1,7 +1,7 @@
 import { Component, DestroyRef, OnInit } from '@angular/core';
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductCategory, ProductItem } from '../../interfaces/product';
 import { ProductDetail } from '../product-detail/product-detail';
 import { Product } from '../../services/product';
@@ -34,14 +34,23 @@ export class Products implements OnInit {
   errorMessage = '';
   quickViewOpen = false;
   quickViewProductId: string | null = null;
+  private requestedCategoryId: string | null = null;
 
   constructor(
     private readonly productService: Product,
     private readonly router: Router,
+    private readonly route: ActivatedRoute,
     private readonly destroyRef: DestroyRef,
   ) { }
 
   ngOnInit(): void {
+    this.route.queryParamMap
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((params) => {
+        this.requestedCategoryId = params.get('category');
+        this.applyRequestedCategory();
+      });
+
     this.productService
       .getCategory()
       .pipe(takeUntilDestroyed(this.destroyRef))
@@ -50,6 +59,7 @@ export class Products implements OnInit {
           this.categoryMenuItems = this.buildCategoryMenu(categories);
           this.products = this.flattenProducts(categories);
           this.loading = false;
+          this.applyRequestedCategory();
         },
         error: () => {
           this.errorMessage = 'Không thể tải danh sách sản phẩm. Vui lòng thử lại sau.';
@@ -74,6 +84,12 @@ export class Products implements OnInit {
 
   selectCategory(categoryId: string): void {
     this.selectedCategoryId = categoryId;
+
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: { category: categoryId === 'all' ? null : categoryId },
+      queryParamsHandling: 'merge',
+    });
   }
 
   get filteredProducts(): ProductCardItem[] {
@@ -117,6 +133,23 @@ export class Products implements OnInit {
         categoryName: category.name,
       })),
     );
+  }
+
+  private applyRequestedCategory(): void {
+    if (this.loading || this.errorMessage) {
+      return;
+    }
+
+    if (!this.requestedCategoryId) {
+      this.selectedCategoryId = 'all';
+      return;
+    }
+
+    const categoryExists = this.categoryMenuItems.some(
+      (item) => item.id === this.requestedCategoryId,
+    );
+
+    this.selectedCategoryId = categoryExists ? this.requestedCategoryId : 'all';
   }
 
 }

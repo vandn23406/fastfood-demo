@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 type CategoryItem = {
+  id: string;
   name: string;
   image: string;
 };
@@ -21,38 +23,44 @@ type PromotionItem = {
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
 export class Home {
   readonly categories: CategoryItem[] = [
     {
+      id: 'burger',
       name: 'Burger',
       image:
         'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1200&q=80',
     },
     {
+      id: 'pasta',
       name: 'Mỳ Ý',
       image:
         'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=1200&q=80',
     },
     {
+      id: 'fried-chicken',
       name: 'Gà rán',
       image:
         'https://images.unsplash.com/photo-1562967916-eb82221dfb92?auto=format&fit=crop&w=1200&q=80',
     },
     {
+      id: 'fries',
       name: 'Khoai tây chiên',
       image:
         'https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?auto=format&fit=crop&w=1200&q=80',
     },
     {
+      id: 'ice-cream',
       name: 'Tráng miệng',
       image:
         'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=1200&q=80',
     },
     {
+      id: 'drinks',
       name: 'Thức uống',
       image:
         'https://images.unsplash.com/photo-1554866585-cd94860890b7?auto=format&fit=crop&w=1200&q=80',
