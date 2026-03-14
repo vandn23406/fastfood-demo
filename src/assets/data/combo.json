@@ -1,0 +1,442 @@
+[
+    {
+        "id": "CB001",
+        "name": "Combo 1 – Ăn nhanh",
+        "price": 59000,
+        "image": "https://example.com/images/combo1.jpg",
+        "description": "Combo gồm 1 Burger, 1 phần khoai tây chiên và 1 ly nước ngọt. Lựa chọn sốt và loại nước theo sở thích.",
+        "rating": 4.8,
+        "reviewCount": 96,
+        "sold": 320,
+        "options": {
+            "burgerSauce": {
+                "label": "Chọn sốt cho Burger",
+                "type": "single",
+                "required": true,
+                "items": [
+                    {
+                        "name": "Sốt phô mai",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt BBQ",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt cay",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt tiêu đen",
+                        "price": 0
+                    }
+                ]
+            },
+            "drinkType": {
+                "label": "Chọn loại nước",
+                "type": "single",
+                "required": true,
+                "items": [
+                    {
+                        "name": "Coca",
+                        "price": 0
+                    },
+                    {
+                        "name": "Pepsi",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sprite",
+                        "price": 0
+                    }
+                ]
+            },
+            "drinkSize": {
+                "label": "Size nước",
+                "type": "single",
+                "items": [
+                    {
+                        "name": "Thường",
+                        "price": 0
+                    },
+                    {
+                        "name": "Lớn",
+                        "price": 5000
+                    },
+                    {
+                        "name": "Siêu lớn",
+                        "price": 10000
+                    }
+                ]
+            },
+            "friesType": {
+                "label": "Loại khoai",
+                "type": "single",
+                "items": [
+                    {
+                        "name": "Khoai tây chiên",
+                        "price": 0
+                    },
+                    {
+                        "name": "Khoai tây lắc phô mai",
+                        "price": 5000
+                    }
+                ]
+            },
+            "friesSize": {
+                "label": "Size khoai",
+                "type": "single",
+                "items": [
+                    {
+                        "name": "Thường",
+                        "price": 0
+                    },
+                    {
+                        "name": "Lớn",
+                        "price": 5000
+                    },
+                    {
+                        "name": "Siêu lớn",
+                        "price": 10000
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "CB002",
+        "name": "Combo 2 – No nê",
+        "price": 79000,
+        "image": "https://example.com/images/combo2.jpg",
+        "description": "Combo gồm 1 phần Mỳ Ý, 1 phần Gà rán và 1 ly trà sữa. Lựa chọn sốt, loại mỳ và loại trà theo sở thích.",
+        "rating": 4.7,
+        "reviewCount": 84,
+        "sold": 250,
+        "options": {
+            "pastaType": {
+                "label": "Chọn loại Mỳ Ý",
+                "type": "single",
+                "required": true,
+                "items": [
+                    {
+                        "name": "Mỳ Ý sốt bò bằm",
+                        "price": 0
+                    },
+                    {
+                        "name": "Mỳ Ý gà giòn",
+                        "price": 0
+                    },
+                    {
+                        "name": "Mỳ Ý sốt kem nấm",
+                        "price": 0
+                    }
+                ]
+            },
+            "chickenSauce": {
+                "label": "Chọn sốt cho Gà",
+                "type": "single",
+                "required": true,
+                "items": [
+                    {
+                        "name": "Sốt phô mai",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt BBQ",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt cay",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt tiêu đen",
+                        "price": 0
+                    }
+                ]
+            },
+            "drinkType": {
+                "label": "Chọn loại Trà",
+                "type": "single",
+                "required": true,
+                "items": [
+                    {
+                        "name": "Trà trái cây",
+                        "price": 0
+                    },
+                    {
+                        "name": "Trà sữa truyền thống",
+                        "price": 0
+                    },
+                    {
+                        "name": "Trà sữa topping",
+                        "price": 5000
+                    }
+                ]
+            },
+            "drinkSize": {
+                "label": "Size trà",
+                "type": "single",
+                "items": [
+                    {
+                        "name": "Thường",
+                        "price": 0
+                    },
+                    {
+                        "name": "Lớn",
+                        "price": 5000
+                    },
+                    {
+                        "name": "Siêu lớn",
+                        "price": 10000
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "CB003",
+        "name": "Combo 3 – Cặp đôi",
+        "price": 119000,
+        "image": "https://example.com/images/combo3.jpg",
+        "description": "Combo gồm 2 Burger, 2 khoai tây và 2 ly Pepsi. Chọn sốt cho burger và có thể nâng size khoai hoặc nước.",
+        "rating": 4.9,
+        "reviewCount": 140,
+        "sold": 410,
+        "options": {
+            "burger1Sauce": {
+                "label": "Sốt Burger 1",
+                "type": "single",
+                "required": true,
+                "items": [
+                    {
+                        "name": "Sốt phô mai",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt BBQ",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt cay",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt tiêu đen",
+                        "price": 0
+                    }
+                ]
+            },
+            "burger2Sauce": {
+                "label": "Sốt Burger 2",
+                "type": "single",
+                "required": true,
+                "items": [
+                    {
+                        "name": "Sốt phô mai",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt BBQ",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt cay",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt tiêu đen",
+                        "price": 0
+                    }
+                ]
+            },
+            "friesSize": {
+                "label": "Size khoai (2 phần)",
+                "type": "single",
+                "items": [
+                    {
+                        "name": "Thường",
+                        "price": 0
+                    },
+                    {
+                        "name": "Lớn (+10k)",
+                        "price": 10000
+                    },
+                    {
+                        "name": "Siêu lớn (+20k)",
+                        "price": 20000
+                    }
+                ]
+            },
+            "drinkSize": {
+                "label": "Size nước (2 ly Pepsi)",
+                "type": "single",
+                "items": [
+                    {
+                        "name": "Thường",
+                        "price": 0
+                    },
+                    {
+                        "name": "Lớn (+10k)",
+                        "price": 10000
+                    },
+                    {
+                        "name": "Siêu lớn (+20k)",
+                        "price": 20000
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "CB004",
+        "name": "Combo 4 – Nhóm bạn",
+        "price": 199000,
+        "image": "https://example.com/images/combo4.jpg",
+        "description": "Combo gồm 4 phần Gà rán, 4 phần khoai tây và 4 ly nước ngọt. Lựa chọn sốt cho gà, loại khoai và loại nước theo sở thích.",
+        "rating": 4.9,
+        "reviewCount": 180,
+        "sold": 520,
+        "options": {
+            "chicken1Sauce": {
+                "label": "Sốt gà 1",
+                "type": "single",
+                "required": true,
+                "items": [
+                    {
+                        "name": "Sốt phô mai",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt BBQ",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt cay",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt tiêu đen",
+                        "price": 0
+                    }
+                ]
+            },
+            "chicken2Sauce": {
+                "label": "Sốt gà 2",
+                "type": "single",
+                "required": true,
+                "items": [
+                    {
+                        "name": "Sốt phô mai",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt BBQ",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt cay",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt tiêu đen",
+                        "price": 0
+                    }
+                ]
+            },
+            "chicken3Sauce": {
+                "label": "Sốt gà 3",
+                "type": "single",
+                "required": true,
+                "items": [
+                    {
+                        "name": "Sốt phô mai",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt BBQ",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt cay",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt tiêu đen",
+                        "price": 0
+                    }
+                ]
+            },
+            "chicken4Sauce": {
+                "label": "Sốt gà 4",
+                "type": "single",
+                "required": true,
+                "items": [
+                    {
+                        "name": "Sốt phô mai",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt BBQ",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt cay",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt tiêu đen",
+                        "price": 0
+                    }
+                ]
+            },
+            "mainDish": {
+                "label": "Chọn món chính",
+                "type": "single",
+                "required": true,
+                "items": [
+                    {
+                        "name": "Burger",
+                        "price": 0
+                    },
+                    {
+                        "name": "Mỳ Ý",
+                        "price": 0
+                    }
+                ]
+            },
+            "friesType": {
+                "label": "Khoai tây",
+                "type": "single",
+                "items": [
+                    {
+                        "name": "Khoai tây chiên (size lớn)",
+                        "price": 0
+                    },
+                    {
+                        "name": "Khoai tây lắc phô mai (size lớn)",
+                        "price": 5000
+                    }
+                ]
+            },
+            "drinkSize": {
+                "label": "Size nước (4 ly Pepsi)",
+                "type": "single",
+                "items": [
+                    {
+                        "name": "Thường",
+                        "price": 0
+                    },
+                    {
+                        "name": "Lớn (+20k)",
+                        "price": 20000
+                    },
+                    {
+                        "name": "Siêu lớn (+40k)",
+                        "price": 40000
+                    }
+                ]
+            }
+        }
+    }
+]

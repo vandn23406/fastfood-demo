@@ -1,0 +1,31 @@
+<section class="promotion-page py-5">
+    <div class="container">
+        <div class="section-head mb-4">
+            <p class="section-tag mb-1">Ưu đãi hấp dẫn mỗi tuần</p>
+            <h1 class="section-title mb-0">Khuyến mãi Box&amp;Bite</h1>
+        </div>
+
+        <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
+            @for (item of promotions; track trackByTitle($index, item)) {
+            <div class="col">
+                <article class="promo-card h-100">
+                    <div class="promo-image-wrap">
+                        <img [src]="item.image" [alt]="item.title" class="promo-image" (error)="onImageError($event)" />
+                        <span class="promo-badge">Hot deal</span>
+                    </div>
+
+                    <div class="promo-body">
+                        <h2 class="promo-title mb-2">{{ item.title }}</h2>
+                        <p class="promo-desc mb-3">{{ item.desc }}</p>
+
+                        <div class="promo-footer">
+                            <span class="promo-price">{{ item.price }}</span>
+                            <button type="button" class="promo-btn">Xem ưu đãi</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            }
+        </div>
+    </div>
+</section>

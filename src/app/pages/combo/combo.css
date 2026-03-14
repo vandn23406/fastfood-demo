@@ -27,34 +27,24 @@
 }
 
 .category-strip {
-    background: linear-gradient(140deg, #f7e8ca 0%, #efd6ab 100%);
-    border: 1px solid rgba(153, 61, 41, 0.16);
-    border-radius: 22px;
+    background: #e8c9cf;
+    border-radius: 0 0 22px 22px;
     padding: 14px 16px;
-    box-shadow: 0 10px 20px rgba(62, 27, 18, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .category-track {
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: minmax(124px, 1fr);
-    gap: 14px;
+    gap: 12px;
     overflow-x: auto;
-    padding: 4px 2px 6px;
-}
-
-.category-track::-webkit-scrollbar {
-    height: 7px;
-}
-
-.category-track::-webkit-scrollbar-thumb {
-    background: rgba(153, 61, 41, 0.28);
-    border-radius: 999px;
+    padding-bottom: 2px;
 }
 
 .category-item {
-    border: 1px solid rgba(153, 61, 41, 0.12);
-    background: rgba(255, 255, 255, 0.55);
+    border: none;
+    background: transparent;
     color: #2b150f;
     font-weight: 800;
     font-size: 0.86rem;
@@ -62,40 +52,30 @@
     letter-spacing: 0.02em;
     display: grid;
     justify-items: center;
-    gap: 9px;
-    padding: 10px 8px;
-    border-radius: 14px;
-    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    gap: 8px;
+    padding: 8px 6px;
+    border-radius: 12px;
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
 .category-item:hover {
-    transform: translateY(-3px);
-    border-color: rgba(153, 61, 41, 0.3);
-    background: rgba(255, 255, 255, 0.78);
-    box-shadow: 0 8px 16px rgba(62, 27, 18, 0.1);
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.3);
 }
 
 .category-item.active {
-    color: #993d29;
-    border-color: rgba(153, 61, 41, 0.34);
-    background: #fffdf8;
-    box-shadow: 0 8px 16px rgba(62, 27, 18, 0.14);
+    color: #c01935;
 }
 
 .category-thumb {
     width: 72px;
     height: 72px;
     border-radius: 50%;
-    background: #fff8ee;
-    border: 2px solid rgba(153, 61, 41, 0.14);
-    box-shadow: 0 8px 16px rgba(62, 27, 18, 0.12);
+    background: #ffffff;
+    box-shadow: 0 8px 16px rgba(62, 27, 18, 0.14);
     display: grid;
     place-items: center;
     overflow: hidden;
-}
-
-.category-item.active .category-thumb {
-    border-color: rgba(153, 61, 41, 0.4);
 }
 
 .category-thumb img {
@@ -105,7 +85,7 @@
 }
 
 .icon-thumb {
-    color: #ba4b28;
+    color: #c01935;
     font-size: 1.45rem;
 }
 

@@ -1,0 +1,52 @@
+<section class="products-page py-5">
+    <div class="container">
+        <div class="section-head mb-4">
+            <p class="section-tag mb-1">Combo tiết kiệm - Chọn món linh hoạt</p>
+            <h1 class="section-title mb-0">Danh sách Combo</h1>
+        </div>
+
+        @if (loading) {
+        <div class="state-card">Đang tải dữ liệu combo...</div>
+        }
+
+        @if (!loading && errorMessage) {
+        <div class="state-card error">{{ errorMessage }}</div>
+        }
+
+        @if (!loading && !errorMessage) {
+        <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-lg-3">
+            @for (item of combos; track item.id) {
+            <div class="col">
+                <article class="product-card h-100" role="button" tabindex="0" (click)="viewComboDetail(item.id)"
+                    (keydown.enter)="viewComboDetail(item.id)" (keydown.space)="viewComboDetail(item.id)">
+                    <img [src]="item.image" [alt]="item.name" class="product-image" (error)="onImageError($event)" />
+
+                    <div class="product-body">
+                        <div class="mb-2">
+                            <h2 class="product-name mb-0">{{ item.name }}</h2>
+                        </div>
+
+                        @if (item.description) {
+                        <p class="product-meta mb-2">{{ item.description }}</p>
+                        }
+
+                        <div class="product-bottom">
+                            <strong>{{ item.price | currency:'VND':'symbol':'1.0-0':'vi-VN' }}</strong>
+                            <button type="button" class="add-btn" aria-label="Xem chi tiết combo"
+                                (click)="onAddClick($event, item.id)">
+                                <i class="bi bi-cart-plus" aria-hidden="true"></i>
+                                Thêm
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            }
+        </div>
+
+        @if (!combos.length) {
+        <div class="state-card mt-4">Không có combo nào.</div>
+        }
+        }
+    </div>
+</section>
