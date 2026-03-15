@@ -123,8 +123,26 @@
     display: block;
 }
 
+.category-image-wrap {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+@media (min-width: 992px) {
+    .categories-section .col:nth-child(-n+3) .category-image-wrap {
+        aspect-ratio: 1 / 1;
+    }
+
+    .categories-section .col:nth-child(n+4) .category-image-wrap {
+        aspect-ratio: 16 / 9;
+    }
+}
+
 .category-image {
-    height: 180px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .combo-image {
@@ -176,7 +194,13 @@
 
 .about-image {
     border-radius: 16px;
-    height: 300px;
+    height: auto;
+}
+
+video.about-image {
+    width: 70%;
+    object-fit: contain;
+    background: #000;
 }
 
 .floating-cart {

@@ -36,10 +36,9 @@
                 <div class="col">
                     <a [routerLink]="['/products']" [queryParams]="{ category: item.id }"
                         class="category-card h-100 text-decoration-none">
-                        <img [src]="item.image" [alt]="item.name" class="category-image"
-                            (error)="onImageError($event)" />
-                        <div class="category-body">
-                            <h3 class="mb-0">{{ item.name }}</h3>
+                        <div class="category-image-wrap">
+                            <img [src]="item.image" [alt]="item.name" class="category-image"
+                                (error)="onImageError($event)" />
                         </div>
                     </a>
                 </div>
@@ -63,7 +62,7 @@
                             (error)="onImageError($event)" />
                         <div class="combo-body">
                             <h3>{{ combo.name }}</h3>
-                            <p class="combo-price mb-0">{{ combo.price }}</p>
+                            <p class="combo-price mb-0">{{ combo.price | number:'1.0-0':'vi-VN' }}</p>
                         </div>
                     </a>
                 </div>
@@ -109,8 +108,10 @@
                     </div>
 
                     <div class="col-lg-5">
-                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80"
-                            alt="Không gian BOX & BITE" class="about-image" (error)="onImageError($event)" />
+                        <video class="about-image" autoplay muted loop playsinline controls>
+                            <source src="/video_giao_hang.mp4" type="video/mp4" />
+                            Trình duyệt của bạn không hỗ trợ video.
+                        </video>
                     </div>
                 </div>
             </article>
