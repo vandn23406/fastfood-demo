@@ -231,4 +231,38 @@
         width: 64px;
         height: 64px;
     }
+
+    .product-image {
+        height: 200px;
+    }
+
+    .quickview-backdrop {
+        padding: 10px;
+    }
+
+    .quickview-dialog {
+        max-height: calc(100vh - 20px);
+        border-radius: 16px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .products-page {
+        min-height: auto;
+    }
+
+    .section-title {
+        font-size: clamp(1.55rem, 8vw, 1.95rem);
+    }
+
+    .product-bottom {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .add-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 0.54rem 0.8rem;
+    }
 }

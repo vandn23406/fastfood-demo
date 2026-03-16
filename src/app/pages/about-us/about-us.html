@@ -1,122 +1,171 @@
-<section class="about-page py-5">
-    <div class="container">
-        <header class="section-head mb-4">
-            <p class="section-tag mb-1">Giới thiệu cửa hàng</p>
-            <h1 class="section-title mb-2">Về BOX &amp; BITE</h1>
-            <p class="section-lead mb-0">Tổng quan thương hiệu, định hướng phát triển và danh mục sản phẩm cốt lõi.</p>
-        </header>
+<section class="about-page">
+    <div class="container py-5">
+        <section class="hero-brand mb-5">
+            <div class="row g-4 align-items-center">
+                <div class="col-12 col-lg-7">
+                    <p class="hero-tag mb-2">Fast Food Brand Story</p>
+                    <h1 class="hero-title mb-2">BOX &amp; BITE</h1>
+                    <h2 class="hero-subtitle mb-3">Ngon nhanh, trọn vị</h2>
+                    <p class="hero-text mb-4">
+                        BOX &amp; BITE mang đến trải nghiệm đồ ăn nhanh hiện đại: dễ chọn món, dễ đặt hàng, hương vị ổn
+                        định
+                        và dịch vụ nhanh đúng chất nhịp sống đô thị.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a class="btn btn-brand" href="/products">Khám phá thực đơn</a>
+                        <a class="btn btn-light-brand" href="/combo">Xem combo nổi bật</a>
+                    </div>
+                </div>
 
-        <article class="info-card mb-4">
-            <h2 class="card-title">Giới thiệu</h2>
-            <div class="info-grid">
-                <div class="info-item">
-                    <h3>Mô hình kinh doanh</h3>
-                    <p>{{ introduction.businessModel }}</p>
-                </div>
-                <div class="info-item">
-                    <h3>Khách hàng mục tiêu</h3>
-                    <p>{{ introduction.targetCustomers }}</p>
-                </div>
-                <div class="info-item">
-                    <h3>Danh mục sản phẩm chính</h3>
-                    <p>{{ introduction.productCategories }}</p>
-                </div>
-                <div class="info-item">
-                    <h3>Thông điệp / Slogan</h3>
-                    <p class="highlight-text">{{ introduction.slogan }}</p>
-                </div>
-                <div class="info-item full">
-                    <h3>Hình thức bán hàng</h3>
-                    <p>{{ introduction.salesChannels }}</p>
+                <div class="col-12 col-lg-5">
+                    <div class="brand-card h-100">
+                        <p class="small-label mb-3">Giá trị cốt lõi</p>
+                        <ul class="icon-list mb-0">
+                            <li>Nhanh chóng trong phục vụ và giao nhận.</li>
+                            <li>Tập trung hương vị dễ ăn, dễ ghi nhớ.</li>
+                            <li>Linh hoạt từ món lẻ đến combo tiết kiệm.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </article>
+        </section>
 
-        <article class="info-card mb-4">
-            <h2 class="card-title">Tổng quan cửa hàng</h2>
-            <div class="row g-4 align-items-stretch">
-                <div class="col-12 col-lg-5">
-                    <div class="sub-card h-100">
-                        <h3 class="sub-title">Logo</h3>
-                        <div class="logo-preview mb-3">
+        <section class="section-block mb-4">
+            <div class="section-head mb-3">
+                <p class="section-tag mb-1">Introduction</p>
+                <h2 class="section-title mb-0">Giới thiệu</h2>
+            </div>
+            <div class="row g-3">
+                <div class="col-12 col-md-6 col-xl-4">
+                    <article class="brand-card h-100">
+                        <p class="small-label">Mô hình kinh doanh</p>
+                        <p class="mb-0">{{ introduction.businessModel }}</p>
+                    </article>
+                </div>
+                <div class="col-12 col-md-6 col-xl-4">
+                    <article class="brand-card h-100">
+                        <p class="small-label">Khách hàng mục tiêu</p>
+                        <p class="mb-0">{{ introduction.targetCustomers }}</p>
+                    </article>
+                </div>
+                <div class="col-12 col-md-6 col-xl-4">
+                    <article class="brand-card h-100">
+                        <p class="small-label">Danh mục sản phẩm chính</p>
+                        <p class="mb-0">{{ introduction.productCategories }}</p>
+                    </article>
+                </div>
+                <div class="col-12 col-md-6">
+                    <article class="brand-card h-100">
+                        <p class="small-label">Thông điệp / Slogan</p>
+                        <p class="highlight-text mb-0">{{ introduction.slogan }}</p>
+                    </article>
+                </div>
+                <div class="col-12 col-md-6">
+                    <article class="brand-card h-100">
+                        <p class="small-label">Hình thức bán hàng</p>
+                        <p class="mb-0">{{ introduction.salesChannels }}</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block mb-4">
+            <div class="section-head mb-3">
+                <p class="section-tag mb-1">Brand Overview</p>
+                <h2 class="section-title mb-0">Tổng quan thương hiệu</h2>
+            </div>
+            <div class="row g-3 align-items-stretch">
+                <div class="col-12 col-lg-4">
+                    <article class="brand-card h-100 text-center text-lg-start">
+                        <p class="small-label">Logo</p>
+                        <div class="logo-preview mx-auto mx-lg-0 mb-3">
                             <img [src]="logoInfo.image" alt="Logo BOX & BITE" />
                         </div>
                         <p class="mb-0">{{ logoInfo.meaning }}</p>
-
-                        <div class="portrait-video-wrap mt-3">
-                            <video class="portrait-video" autoplay muted loop playsinline controls>
-                                <source src="/video_mon-an.mp4" type="video/mp4" />
-                                Trình duyệt của bạn không hỗ trợ video.
-                            </video>
-                        </div>
-                    </div>
+                    </article>
                 </div>
-
-                <div class="col-12 col-lg-7">
-                    <div class="sub-card h-100">
-                        <h3 class="sub-title">Tên thương hiệu</h3>
-                        <p><strong>Tên:</strong> {{ brandInfo.name }}</p>
+                <div class="col-12 col-lg-8">
+                    <article class="brand-card h-100">
+                        <p class="small-label">Tên thương hiệu</p>
+                        <h3 class="brand-name">{{ brandInfo.name }}</h3>
                         <p>{{ brandInfo.meaning }}</p>
                         <p class="mb-0">{{ brandInfo.pronunciation }}</p>
-                    </div>
+                    </article>
                 </div>
             </div>
-        </article>
+        </section>
 
-        <article class="info-card mb-4">
-            <h2 class="card-title">Tầm nhìn - Sứ mệnh</h2>
-            <div class="row g-4">
+        <section class="section-block mb-4">
+            <div class="section-head mb-3">
+                <p class="section-tag mb-1">Vision &amp; Mission</p>
+                <h2 class="section-title mb-0">Tầm nhìn và sứ mệnh</h2>
+            </div>
+            <div class="row g-3">
                 <div class="col-12 col-lg-6">
-                    <div class="sub-card h-100">
-                        <h3 class="sub-title">Tầm nhìn</h3>
-                        <ul class="feature-list mb-0">
+                    <article class="brand-card h-100">
+                        <p class="small-label">Tầm nhìn</p>
+                        <ul class="icon-list mb-0">
                             @for (item of vision; track item) {
                             <li>{{ item }}</li>
                             }
                         </ul>
-                    </div>
+                    </article>
                 </div>
-
                 <div class="col-12 col-lg-6">
-                    <div class="sub-card h-100">
-                        <h3 class="sub-title">Sứ mệnh</h3>
-                        <ul class="feature-list mb-0">
+                    <article class="brand-card h-100">
+                        <p class="small-label">Sứ mệnh</p>
+                        <ul class="icon-list mb-0">
                             @for (item of mission; track item) {
                             <li>{{ item }}</li>
                             }
                         </ul>
-                    </div>
+                    </article>
                 </div>
             </div>
-        </article>
+        </section>
 
-        <article class="info-card">
-            <h2 class="card-title">Sản phẩm cung cấp</h2>
-            <div class="sub-card mb-3">
-                <h3 class="sub-title">Mô tả sản phẩm</h3>
-                <p>{{ productOverview.summary }}</p>
-                <ul class="feature-list mb-0">
-                    @for (item of productOverview.highlights; track item) {
-                    <li>{{ item }}</li>
-                    }
-                </ul>
+        <section class="section-block mb-4">
+            <div class="section-head mb-3">
+                <p class="section-tag mb-1">Product Overview</p>
+                <h2 class="section-title mb-0">Sản phẩm cung cấp</h2>
             </div>
+            <div class="row g-3">
+                <div class="col-12 col-lg-7">
+                    <article class="brand-card h-100">
+                        <p class="small-label">Mô tả sản phẩm</p>
+                        <p>{{ productOverview.summary }}</p>
+                        <ul class="icon-list mb-0">
+                            @for (item of productOverview.highlights; track item) {
+                            <li>{{ item }}</li>
+                            }
+                        </ul>
+                    </article>
+                </div>
+                <div class="col-12 col-lg-5">
+                    <article class="brand-card h-100">
+                        <p class="small-label">Lý do chọn sản phẩm</p>
+                        <ul class="icon-list mb-0">
+                            @for (item of reasons; track item) {
+                            <li>{{ item }}</li>
+                            }
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-            <div class="portrait-video-wrap mb-3">
-                <video class="portrait-video" autoplay muted loop playsinline controls>
-                    <source src="/video_giao_hang.mp4" type="video/mp4" />
-                    Trình duyệt của bạn không hỗ trợ video.
-                </video>
+        <section class="cta-block">
+            <div class="row align-items-center g-3">
+                <div class="col-12 col-lg-8">
+                    <p class="section-tag cta-tag mb-1">Call To Action</p>
+                    <h2 class="cta-title mb-2">Sẵn sàng cho bữa ăn nhanh chuẩn vị BOX &amp; BITE?</h2>
+                    <p class="cta-text mb-0">Đặt món ngay để tận hưởng combo tiện lợi, giá hợp lý và giao hàng nhanh
+                        chóng.</p>
+                </div>
+                <div class="col-12 col-lg-4 text-lg-end">
+                    <a class="btn btn-cta" href="/products">Đặt món ngay</a>
+                </div>
             </div>
-
-            <div class="sub-card">
-                <h3 class="sub-title">Lý do chọn sản phẩm</h3>
-                <ul class="feature-list mb-0">
-                    @for (item of reasons; track item) {
-                    <li>{{ item }}</li>
-                    }
-                </ul>
-            </div>
-        </article>
+        </section>
     </div>
 </section>

@@ -345,4 +345,25 @@
     .item-image {
         height: 170px;
     }
+
+    .section-title {
+        font-size: clamp(1.55rem, 8vw, 1.95rem);
+    }
+
+    .remove-btn {
+        min-height: 36px;
+    }
+
+    .checkout-btn {
+        padding: 0.8rem 0.95rem;
+    }
+
+    .order-success-backdrop {
+        padding: 12px;
+    }
+
+    .order-success-dialog {
+        padding: 22px 16px;
+        border-radius: 16px;
+    }
 }

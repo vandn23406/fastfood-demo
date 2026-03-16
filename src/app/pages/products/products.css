@@ -27,75 +27,68 @@
 }
 
 .category-strip {
-    background: linear-gradient(140deg, #f7e8ca 0%, #efd6ab 100%);
-    border: 1px solid rgba(153, 61, 41, 0.16);
-    border-radius: 22px;
-    padding: 14px 16px;
-    box-shadow: 0 10px 20px rgba(62, 27, 18, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    background: #ffffff;
+    border: 1px solid rgba(62, 27, 18, 0.08);
+    border-radius: 18px;
+    padding: 12px 14px;
+    box-shadow: 0 10px 20px rgba(62, 27, 18, 0.07);
 }
 
 .category-track {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(124px, 1fr);
-    gap: 14px;
+    display: flex;
+    gap: 10px;
     overflow-x: auto;
-    padding: 4px 2px 6px;
+    padding: 2px 1px 6px;
 }
 
 .category-track::-webkit-scrollbar {
-    height: 7px;
+    height: 6px;
 }
 
 .category-track::-webkit-scrollbar-thumb {
-    background: rgba(153, 61, 41, 0.28);
+    background: rgba(62, 27, 18, 0.25);
     border-radius: 999px;
 }
 
 .category-item {
-    border: 1px solid rgba(153, 61, 41, 0.12);
-    background: rgba(255, 255, 255, 0.55);
-    color: #2b150f;
-    font-weight: 800;
-    font-size: 0.86rem;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
+    border: 2px solid transparent;
+    background: transparent;
+    color: #203447;
+    min-width: 104px;
+    flex: 0 0 auto;
     display: grid;
     justify-items: center;
-    gap: 9px;
-    padding: 10px 8px;
+    gap: 8px;
+    padding: 8px 8px 7px;
     border-radius: 14px;
-    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    transition: transform 0.18s ease, background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
 }
 
 .category-item:hover {
-    transform: translateY(-3px);
-    border-color: rgba(153, 61, 41, 0.3);
-    background: rgba(255, 255, 255, 0.78);
-    box-shadow: 0 8px 16px rgba(62, 27, 18, 0.1);
+    transform: translateY(-1px);
+    background: rgba(239, 246, 253, 0.8);
 }
 
 .category-item.active {
-    color: #993d29;
-    border-color: rgba(153, 61, 41, 0.34);
-    background: #fffdf8;
-    box-shadow: 0 8px 16px rgba(62, 27, 18, 0.14);
+    color: #f25261;
+    border-color: #f25261;
+    background: #fff;
 }
 
 .category-thumb {
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    background: #fff8ee;
-    border: 2px solid rgba(153, 61, 41, 0.14);
-    box-shadow: 0 8px 16px rgba(62, 27, 18, 0.12);
+    width: 92px;
+    height: 70px;
+    border-radius: 12px;
+    background: #f8f2ea;
+    border: 1px solid rgba(32, 52, 71, 0.08);
     display: grid;
     place-items: center;
     overflow: hidden;
 }
 
 .category-item.active .category-thumb {
-    border-color: rgba(153, 61, 41, 0.4);
+    border-color: rgba(242, 82, 97, 0.36);
+    background: #fff8f8;
 }
 
 .category-thumb img {
@@ -105,8 +98,16 @@
 }
 
 .icon-thumb {
-    color: #ba4b28;
-    font-size: 1.45rem;
+    color: #f25261;
+    font-size: 1.25rem;
+}
+
+.category-name {
+    font-size: 0.9rem;
+    line-height: 1.2;
+    font-weight: 700;
+    text-align: center;
+    white-space: normal;
 }
 
 .product-card {
@@ -239,16 +240,51 @@
 }
 
 @media (max-width: 767.98px) {
-    .category-track {
-        grid-auto-columns: minmax(116px, 1fr);
+    .category-thumb {
+        width: 84px;
+        height: 64px;
     }
 
     .category-item {
-        font-size: 0.78rem;
+        min-width: 98px;
+        padding: 7px 6px;
     }
 
-    .category-thumb {
-        width: 64px;
-        height: 64px;
+    .category-name {
+        font-size: 0.84rem;
+    }
+
+    .product-image {
+        height: 200px;
+    }
+
+    .quickview-backdrop {
+        padding: 10px;
+    }
+
+    .quickview-dialog {
+        max-height: calc(100vh - 20px);
+        border-radius: 16px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .products-page {
+        min-height: auto;
+    }
+
+    .section-title {
+        font-size: clamp(1.55rem, 8vw, 1.95rem);
+    }
+
+    .product-bottom {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .add-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 0.54rem 0.8rem;
     }
 }

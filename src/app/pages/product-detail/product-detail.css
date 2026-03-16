@@ -492,6 +492,40 @@
     }
 }
 
+@media (max-width: 767.98px) {
+    .section-title {
+        font-size: clamp(1.75rem, 7vw, 2.2rem);
+    }
+
+    .meta-row {
+        font-size: 0.88rem;
+    }
+
+    .option-chip {
+        min-height: 38px;
+    }
+
+    .buy-now-backdrop {
+        padding: 10px;
+    }
+
+    .buy-now-dialog {
+        max-height: calc(100vh - 20px);
+        border-radius: 16px;
+    }
+
+    .info-tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+
+    .info-tabs .nav-item {
+        flex: 0 0 auto;
+    }
+}
+
 .buy-now-backdrop {
     position: fixed;
     inset: 0;
@@ -545,6 +579,10 @@
 
     .section-title {
         font-size: clamp(1.65rem, 7.2vw, 2rem);
+    }
+
+    .product-image {
+        min-height: 240px;
     }
 
     .action-row {

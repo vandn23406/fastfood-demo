@@ -3,21 +3,27 @@
         <div class="container">
             <div class="row g-4 align-items-center">
                 <div class="col-lg-6">
-                    <p class="hero-tag mb-2">BOX &amp; BITE - Ngon nhanh, trọn vị</p>
-                    <h1 class="hero-title mb-3">Bữa ăn nhanh chuẩn vị cho mọi khoảnh khắc</h1>
+                    <p class="hero-tag mb-2">BOX &amp; BITE – FAST FOOD MADE BETTER</p>
+                    <h1 class="hero-title mb-3">Thưởng thức đồ ăn nhanh đậm vị và tiện lợi</h1>
                     <p class="hero-subtitle mb-4">
-                        Burger nóng hổi, gà rán giòn rụm, combo tiện lợi và nhiều món ăn hấp dẫn đang chờ bạn.
+                        Burger nóng hổi, gà rán giòn rụm và những combo tiện lợi
+                        được chuẩn bị nhanh chóng để bạn thưởng thức trọn vẹn
+                        hương vị yêu thích bất cứ lúc nào.
                     </p>
                     <div class="hero-actions d-flex flex-wrap gap-3">
-                        <a href="/products" class="btn btn-brand">Xem thực đơn</a>
+                        <a href="/products" class="btn btn-brand">Đặt món ngay!</a>
                         <a href="/combo" class="btn btn-outline-brand">Khám phá combo</a>
                     </div>
                 </div>
 
-                <div class="col-lg-6">
+                <div class="col-lg-6 hero-food">
                     <div class="hero-visual">
-                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1400&q=80"
-                            alt="Combo đồ ăn nhanh BOX & BITE" class="hero-image" (error)="onImageError($event)" />
+                        <div class="hero-slider">
+                            @for (image of heroImages; track image; let i = $index) {
+                            <img [src]="image" alt="Combo đồ ăn nhanh BOX & BITE" class="hero-image"
+                                [class.active]="currentHeroImageIndex === i" (error)="onImageError($event)" />
+                            }
+                        </div>
                     </div>
                 </div>
             </div>

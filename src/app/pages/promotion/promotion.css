@@ -121,4 +121,23 @@
     .promo-title {
         font-size: 1.2rem;
     }
+
+    .promo-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .promo-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .section-title {
+        font-size: clamp(1.55rem, 8vw, 1.95rem);
+    }
+
+    .promo-image {
+        height: 180px;
+    }
 }

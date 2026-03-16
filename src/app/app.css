@@ -7,10 +7,17 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding-top: 96px;
+    padding-top: 64px;
+    background: #993d29;
 }
 
 .app-content {
     flex: 1;
     width: 100%;
+}
+
+@media (max-width: 767.98px) {
+    .app-shell {
+        padding-top: 108px;
+    }
 }

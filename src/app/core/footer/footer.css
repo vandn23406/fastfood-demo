@@ -90,4 +90,29 @@
         flex-direction: column;
         align-items: flex-start;
     }
+
+    .footer-line {
+        align-items: flex-start;
+        line-height: 1.5;
+    }
+
+    .footer-social {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .site-footer {
+        padding: 12px;
+    }
+
+    .footer-line {
+        font-size: 13px;
+    }
+
+    .social-link {
+        width: 38px;
+        height: 38px;
+    }
 }

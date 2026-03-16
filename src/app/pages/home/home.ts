@@ -21,6 +21,17 @@ type CategoryItem = {
 export class Home {
   constructor(private readonly comboService: Combo) { }
 
+  readonly heroImages: string[] = [
+    '/Burger-xoa-nen.png',
+    '/ga-ran-xoa-phong.png',
+    '/my-xoa-nen.png',
+    '/khoai tây - xoa nen.png',
+  ];
+
+  currentHeroImageIndex = 0;
+
+  private heroRotationTimer?: ReturnType<typeof setInterval>;
+
   readonly categories: CategoryItem[] = [
     {
       id: 'burger',
@@ -82,12 +93,40 @@ export class Home {
   }
 
   ngOnInit(): void {
+    this.preloadHeroImages();
+    this.startHeroRotation();
+
     this.comboService
       .getCombos()
       .pipe(take(1))
       .subscribe((combos) => {
         this.featuredCombos = combos.slice(0, 4);
       });
+  }
+
+  ngOnDestroy(): void {
+    if (this.heroRotationTimer) {
+      clearInterval(this.heroRotationTimer);
+      this.heroRotationTimer = undefined;
+    }
+  }
+
+  private startHeroRotation(): void {
+    if (this.heroImages.length < 2) {
+      return;
+    }
+
+    this.heroRotationTimer = setInterval(() => {
+      this.currentHeroImageIndex =
+        (this.currentHeroImageIndex + 1) % this.heroImages.length;
+    }, 3000);
+  }
+
+  private preloadHeroImages(): void {
+    for (const imageSrc of this.heroImages) {
+      const image = new Image();
+      image.src = imageSrc;
+    }
   }
 
 }

@@ -21,7 +21,7 @@
                     <div class="category-thumb icon-thumb">
                         <i class="bi bi-stars" aria-hidden="true"></i>
                     </div>
-                    <span>Toàn bộ menu</span>
+                    <span class="category-name">Toàn bộ menu</span>
                 </button>
 
                 @for (category of categoryMenuItems; track category.id) {
@@ -30,7 +30,7 @@
                     <div class="category-thumb">
                         <img [src]="category.image" [alt]="category.name" (error)="onImageError($event)" />
                     </div>
-                    <span>{{ category.name }}</span>
+                    <span class="category-name">{{ category.name }}</span>
                 </button>
                 }
             </div>
