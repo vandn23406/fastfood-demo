@@ -17,12 +17,15 @@
 
 .hero-section {
     background:
-        radial-gradient(circle at 75% 45%, rgba(255, 180, 120, 0.45) 0%, rgba(255, 180, 120, 0.25) 25%, rgba(255, 180, 120, 0.1) 45%, transparent 60%),
-        linear-gradient(90deg, rgba(153, 61, 41, 0.44) 0%, rgba(153, 61, 41, 0.24) 36%, rgba(153, 61, 41, 0.06) 62%, rgba(153, 61, 41, 0) 80%),
-        linear-gradient(to bottom, #993D29 0%, #8B3624 20%, #A14B2F 45%, #C87A4A 70%, #E8C79F 100%);
-    min-height: 720px;
+        radial-gradient(circle at 76% 34%, rgba(255, 186, 128, 0.5) 0%, rgba(255, 186, 128, 0.22) 34%, rgba(255, 186, 128, 0.08) 54%, transparent 70%),
+        linear-gradient(105deg, rgba(61, 22, 14, 0.48) 0%, rgba(61, 22, 14, 0.16) 40%, rgba(61, 22, 14, 0) 72%),
+        linear-gradient(180deg, #8d3526 0%, #a3482f 26%, #bf6640 52%, #dca77b 76%, var(--bg) 100%);
+    min-height: 100vh;
     display: flex;
     align-items: center;
+    margin-top: calc(-1 * var(--header-offset, 94px));
+    padding-top: calc(var(--header-offset, 94px) + 2.2rem) !important;
+    padding-bottom: 3.2rem !important;
 }
 
 .hero-tag {
@@ -317,7 +320,8 @@ video.about-image {
 @media (max-width: 991.98px) {
 
     .hero-section {
-        min-height: 620px;
+        min-height: 100vh;
+        padding-top: calc(var(--header-offset, 94px) + 1.8rem) !important;
     }
 
     .hero-visual {
@@ -340,6 +344,12 @@ video.about-image {
 }
 
 @media (max-width: 767.98px) {
+    .hero-section {
+        margin-top: calc(-1 * var(--header-offset, 130px));
+        padding-top: calc(var(--header-offset, 130px) + 1.2rem) !important;
+        padding-bottom: 2.4rem !important;
+    }
+
     .hero-title {
         font-size: clamp(1.7rem, 8vw, 2.1rem);
     }

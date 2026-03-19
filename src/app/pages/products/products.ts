@@ -1,10 +1,11 @@
 import { Component, DestroyRef, OnInit } from '@angular/core';
-import { CommonModule, CurrencyPipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductCategory, ProductItem } from '../../interfaces/product';
 import { ProductDetail } from '../product-detail/product-detail';
 import { Product } from '../../services/product';
+import { ProductCard } from '../../core/product-card/product-card';
 
 type ProductCardItem = ProductItem & {
   categoryId: string;
@@ -19,7 +20,7 @@ type CategoryMenuItem = {
 
 @Component({
   selector: 'app-products',
-  imports: [CommonModule, CurrencyPipe],
+  imports: [CommonModule, ProductCard],
   templateUrl: './products.html',
   styleUrl: './products.css',
 })
@@ -100,8 +101,7 @@ export class Products implements OnInit {
     return this.products.filter((item) => item.categoryId === this.selectedCategoryId);
   }
 
-  onAddClick(event: Event, productId: string): void {
-    event.stopPropagation();
+  onAddClick(productId: string): void {
     this.quickViewProductId = productId;
     this.quickViewOpen = true;
   }

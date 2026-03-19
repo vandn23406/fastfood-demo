@@ -1,33 +1,33 @@
-{
+﻿{
     "category": {
         "id": "burger",
         "name": "Hamburger",
         "products": [
             {
                 "id": "BG001",
-                "name": "Burger bò",
+                "name": "Burger bÃ²",
                 "price": 35000,
-                "image": "https://example.com/images/burger-bo.jpg",
+                "image": "src/assets/images/BG001.png",
                 "options": {
                     "sauce": {
-                        "label": "Chọn sốt",
+                        "label": "Chá»n sá»‘t",
                         "type": "single",
                         "required": true,
                         "items": [
                             {
-                                "name": "Sốt phô mai",
+                                "name": "Sá»‘t phÃ´ mai",
                                 "price": 0
                             },
                             {
-                                "name": "Sốt BBQ",
+                                "name": "Sá»‘t BBQ",
                                 "price": 0
                             },
                             {
-                                "name": "Sốt cay",
+                                "name": "Sá»‘t cay",
                                 "price": 0
                             },
                             {
-                                "name": "Sốt tiêu đen",
+                                "name": "Sá»‘t tiÃªu Ä‘en",
                                 "price": 0
                             }
                         ]
@@ -36,29 +36,29 @@
             },
             {
                 "id": "BG002",
-                "name": "Burger gà giòn",
+                "name": "Burger gÃ  giÃ²n",
                 "price": 35000,
-                "image": "https://example.com/images/burger-ga.jpg",
+                "image": "src/assets/images/BG002.png",
                 "options": {
                     "sauce": {
-                        "label": "Chọn sốt",
+                        "label": "Chá»n sá»‘t",
                         "type": "single",
                         "required": true,
                         "items": [
                             {
-                                "name": "Sốt phô mai",
+                                "name": "Sá»‘t phÃ´ mai",
                                 "price": 0
                             },
                             {
-                                "name": "Sốt BBQ",
+                                "name": "Sá»‘t BBQ",
                                 "price": 0
                             },
                             {
-                                "name": "Sốt cay",
+                                "name": "Sá»‘t cay",
                                 "price": 0
                             },
                             {
-                                "name": "Sốt tiêu đen",
+                                "name": "Sá»‘t tiÃªu Ä‘en",
                                 "price": 0
                             }
                         ]
@@ -67,29 +67,29 @@
             },
             {
                 "id": "BG003",
-                "name": "Burger tôm",
+                "name": "Burger tÃ´m",
                 "price": 35000,
-                "image": "https://example.com/images/burger-tom.jpg",
+                "image": "src/assets/images/BG003.png",
                 "options": {
                     "sauce": {
-                        "label": "Chọn sốt",
+                        "label": "Chá»n sá»‘t",
                         "type": "single",
                         "required": true,
                         "items": [
                             {
-                                "name": "Sốt phô mai",
+                                "name": "Sá»‘t phÃ´ mai",
                                 "price": 0
                             },
                             {
-                                "name": "Sốt BBQ",
+                                "name": "Sá»‘t BBQ",
                                 "price": 0
                             },
                             {
-                                "name": "Sốt cay",
+                                "name": "Sá»‘t cay",
                                 "price": 0
                             },
                             {
-                                "name": "Sốt tiêu đen",
+                                "name": "Sá»‘t tiÃªu Ä‘en",
                                 "price": 0
                             }
                         ]

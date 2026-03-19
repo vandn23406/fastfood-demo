@@ -18,8 +18,8 @@
             <div class="category-track">
                 <button type="button" class="category-item" [class.active]="selectedCategoryId === 'all'"
                     (click)="selectCategory('all')">
-                    <div class="category-thumb icon-thumb">
-                        <i class="bi bi-stars" aria-hidden="true"></i>
+                    <div class="category-thumb">
+                        <img src="/avatar-logo-removebg-preview.png" alt="Toàn bộ menu" />
                     </div>
                     <span class="category-name">Toàn bộ menu</span>
                 </button>
@@ -36,42 +36,12 @@
             </div>
         </div>
 
-        <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-lg-3">
+        <div class="row product-grid gx-4 gy-5 row-cols-1 row-cols-sm-2 row-cols-lg-4">
             @for (item of filteredProducts; track item.id) {
             <div class="col">
-                <article class="product-card h-100" role="button" tabindex="0" (click)="viewProductDetail(item.id)"
-                    (keydown.enter)="viewProductDetail(item.id)" (keydown.space)="viewProductDetail(item.id)">
-                    <img [src]="item.image" [alt]="item.name" class="product-image" (error)="onImageError($event)" />
-
-                    <div class="product-body">
-                        <div class="mb-2">
-                            <h2 class="product-name mb-0">{{ item.name }}</h2>
-                        </div>
-
-                        @if (item.options?.sauce?.items?.length) {
-                        <p class="product-meta mb-3">
-                            {{ item.options?.sauce?.label }}: {{ item.options?.sauce?.items?.length }} lựa chọn
-                        </p>
-                        }
-
-                        @if (item.description) {
-                        <p class="product-meta mb-2">{{ item.description }}</p>
-                        }
-
-                        @if (item.ingredients?.length) {
-                        <p class="product-meta mb-3">Thành phần: {{ item.ingredients?.join(', ') }}</p>
-                        }
-
-                        <div class="product-bottom">
-                            <strong>{{ item.price | currency:'VND':'symbol':'1.0-0':'vi-VN' }}</strong>
-                            <button type="button" class="add-btn" aria-label="Thêm sản phẩm vào giỏ"
-                                (click)="onAddClick($event, item.id)">
-                                <i class="bi bi-cart-plus" aria-hidden="true"></i>
-                                Thêm
-                            </button>
-                        </div>
-                    </div>
-                </article>
+                <app-product-card [item]="item" (viewDetail)="viewProductDetail($event)"
+                    (addClick)="onAddClick($event)">
+                </app-product-card>
             </div>
             }
         </div>
