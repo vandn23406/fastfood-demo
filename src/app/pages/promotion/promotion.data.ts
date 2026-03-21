@@ -8,7 +8,7 @@ export type PromotionItem = {
 export const PROMOTION_ITEMS: PromotionItem[] = [
     {
         title: 'GRAND OPENING, KHAI TRƯƠNG RỰC LỬA CÙNG BOX & BITE!',
-        price: '30%',
+        price: 'Giảm đến 30% - Toàn bộ Combo',
         image: '/assets/images/PR001.png',
         desc: `“Vị ngon bùng nổ, rực lửa đam mê”
 BOX & BITE chính thức khai trương và mang đến cơn bão ưu đãi siêu hời dành riêng cho học sinh, sinh viên và team mê ăn ngon 🎉
@@ -39,9 +39,13 @@ Share bài viết để không bỏ lỡ deal hot này!
 Đặt hàng ngay thôi nào 🚀`
     },
     {
-        title: 'Ưu đãi cơm trưa - Mua 1 tặng 1',
-        price: 'Mua 1 tặng 1',
-        image: '/assets/images/CB002.jpeg',
-        desc: 'Vào giờ cơm trưa, khi bạn mua một phần cơm, bạn sẽ được tặng ngay một phần nước miễn phí. Đây là cơ hội tuyệt vời để thưởng thức bữa trưa ngon miệng cùng đồng nghiệp hoặc bạn bè.',
-    },
+        title: "Ưu đãi theo khung giờ",
+        price: "Giảm đến 20% Các combo sau",
+        image: '/assets/images/PR002.png',
+        desc: `TÌM ĐỒNG ĐỘI "GIẢI CỨU" CƠN ĐÓI TRƯA NAY! 🍔🍝
+Người ta đợi đến giờ tan tầm, còn tụi mình đợi đến 11:00 AM để "oanh tạc" GIỜ VÀNG GIÁ SỐC! 😋
+Cần thanh đạm có Mỳ Ý + Trà Trái Cây. Cần "xôi thịt" đã có Combo Gà Rán + Burger + Coca mát lạnh. Giá thì "hạt dẻ" chỉ từ 55 cành, ăn ngon mà không lo cháy túi!
+⏰ Duy nhất từ 11h - 13h hàng ngày. 🔥 Đừng để cái bụng đói biểu tình, tag ngay đứa bạn thân vào đây rồi lập kèo tới BOX & BITE thôi nào!`
+
+    }
 ];

@@ -32,10 +32,6 @@
 
     <section class="menu-section pb-5">
         <div class="container">
-            <div class="section-head d-flex align-items-center justify-content-between mb-4">
-                <h2 class="section-title mb-0">Thực đơn</h2>
-            </div>
-
             <div class="row product-grid gx-4 gy-5 row-cols-1 row-cols-sm-2 row-cols-lg-4">
                 <div class="col" *ngFor="let product of displayedMenuProducts; trackBy: trackByProductId">
                     <app-product-card [item]="product" (viewDetail)="onMenuProductViewDetail($event)"
@@ -57,12 +53,12 @@
     <section class="categories-section pb-5">
         <div class="container">
             <div class="section-head d-flex align-items-center justify-content-between mb-4">
-                <h2 class="section-title mb-0">Danh mục món ăn</h2>
+                <h2 class="section-title mb-0">Món ăn chính</h2>
                 <a href="/products" class="section-link">Xem tất cả</a>
             </div>
 
             <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-lg-3">
-                @for (item of categories; track trackByCategory($index, item)) {
+                @for (item of mainCategories; track trackByCategory($index, item)) {
                 <div class="col">
                     <a [routerLink]="['/products']" [queryParams]="{ category: item.id }"
                         class="category-card h-100 text-decoration-none">
@@ -84,20 +80,123 @@
                 <a href="/combo" class="section-link">Xem tất cả combo</a>
             </div>
 
-            <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-lg-4">
+            <div class="row product-grid combo-grid gx-4 gy-5 row-cols-1 row-cols-sm-2 row-cols-lg-4">
                 @for (combo of featuredCombos; track combo.id) {
                 <div class="col">
-                    <a [href]="'/combo-detail/' + combo.id" class="combo-card h-100 text-decoration-none">
-                        <img [src]="combo.image" [alt]="combo.name" class="combo-image"
-                            (error)="onImageError($event)" />
-                        <div class="combo-body">
-                            <h3>{{ combo.name }}</h3>
-                            <p class="combo-price mb-0">{{ combo.price | number:'1.0-0':'vi-VN' }}</p>
+                    <app-product-card [item]="combo" (viewDetail)="onFeaturedComboViewDetail($event)"
+                        (addClick)="onFeaturedComboAdd($event)">
+                    </app-product-card>
+                </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <section class="side-dish-section pb-5">
+        <div class="container">
+            <div class="section-head d-flex align-items-center justify-content-between mb-4">
+                <h2 class="section-title mb-0">Món ăn kèm</h2>
+                <a href="/products" class="section-link">Xem tất cả</a>
+            </div>
+
+            <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-lg-3">
+                @for (item of sideDishCategories; track trackByCategory($index, item)) {
+                <div class="col">
+                    <a [routerLink]="['/products']" [queryParams]="{ category: item.id }"
+                        class="category-card h-100 text-decoration-none">
+                        <div class="category-image-wrap">
+                            <img [src]="item.image" [alt]="item.name" class="category-image"
+                                (error)="onImageError($event)" />
                         </div>
                     </a>
                 </div>
                 }
             </div>
+        </div>
+    </section>
+
+    <section class="burger-ingredients-section pb-5">
+        <div class="container">
+            <article class="burger-ingredients-card">
+                <h2 class="section-title burger-section-title mb-4">Thành phần tạo nên Burger của Box&Bite</h2>
+                <div class="row g-4 align-items-center">
+                    <div class="col-12 col-lg-5 order-2 order-lg-1">
+                        <div class="ingredient-item">
+                            <div class="ingredient-copy">
+                                <h3 class="ingredient-title">Rau xà lách tươi</h3>
+                                <p class="ingredient-desc mb-0">
+                                    Giàu vitamin và chất xơ, giúp cân bằng dinh dưỡng và mang lại cảm giác tươi mát
+                                    trong từng miếng ăn.
+                                </p>
+                            </div>
+                            <img src="/Burger/rau-xa-lach.png" alt="Rau xà lách" class="ingredient-thumb"
+                                (error)="onImageError($event)" />
+                        </div>
+
+                        <div class="ingredient-item">
+                            <div class="ingredient-copy">
+                                <h3 class="ingredient-title">Cà chua mọng nước</h3>
+                                <p class="ingredient-desc mb-0">
+                                    Nguồn cung cấp chất chống oxy hóa tự nhiên, giúp tăng hương vị thanh nhẹ và giảm độ
+                                    ngấy.
+                                </p>
+                            </div>
+                            <img src="/Burger/ca-chua.png" alt="Cà chua" class="ingredient-thumb"
+                                (error)="onImageError($event)" />
+                        </div>
+
+                        <div class="ingredient-item">
+                            <div class="ingredient-copy">
+                                <h3 class="ingredient-title">Phô mai béo thơm</h3>
+                                <p class="ingredient-desc mb-0">
+                                    Tan chảy hoàn hảo, tạo độ béo ngậy hấp dẫn và bổ sung canxi cho cơ thể.
+                                </p>
+                            </div>
+                            <img src="/Burger/pho-mai.png" alt="Phô mai" class="ingredient-thumb"
+                                (error)="onImageError($event)" />
+                        </div>
+
+                        <div class="ingredient-item">
+                            <div class="ingredient-copy">
+                                <h3 class="ingredient-title">Bánh mì mềm mịn</h3>
+                                <p class="ingredient-desc mb-0">
+                                    Vỏ ngoài vàng nhẹ, bên trong mềm xốp, giữ trọn hương vị của từng lớp nhân.
+                                </p>
+                            </div>
+                            <img src="/Burger/banh-mi.png" alt="Bánh mì" class="ingredient-thumb"
+                                (error)="onImageError($event)" />
+                        </div>
+
+                        <div class="ingredient-item mb-0">
+                            <div class="ingredient-copy">
+                                <h3 class="ingredient-title">Thịt bò nướng đậm vị</h3>
+                                <p class="ingredient-desc mb-0">
+                                    Được nướng chín vừa tới, giữ nguyên độ mọng nước, giàu protein và đầy năng lượng.
+                                </p>
+                            </div>
+                            <img src="/Burger/thit-bo.png" alt="Thịt bò" class="ingredient-thumb"
+                                (error)="onImageError($event)" />
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-7 order-1 order-lg-2">
+                        <div class="burger-explode-zone" role="button" tabindex="0" aria-label="Xem sản phẩm Burger"
+                            (click)="goToBurgerProducts()" (keydown.enter)="goToBurgerProducts()"
+                            (keydown.space)="goToBurgerProducts(); $event.preventDefault()">
+                            <span class="burger-particle p1"></span>
+                            <span class="burger-particle p2"></span>
+                            <span class="burger-particle p3"></span>
+                            <span class="burger-particle p4"></span>
+                            <span class="burger-particle p5"></span>
+                            <span class="burger-particle p6"></span>
+                            <span class="burger-particle p7"></span>
+                            <span class="burger-particle p8"></span>
+                            <img src="/Burger/burger.png" alt="Burger nhiều lớp" class="burger-visual-main"
+                                (error)="onImageError($event)" />
+                        </div>
+                    </div>
+                </div>
+            </article>
         </div>
     </section>
 
@@ -111,18 +210,31 @@
             <div class="row g-4 row-cols-1 row-cols-lg-2">
                 @for (item of promotions; track trackByPromotion($index, item)) {
                 <div class="col">
-                    <article class="promo-card h-100">
+                    <article class="promo-card h-100" (click)="openPromotion(item)">
                         <img [src]="item.image" [alt]="item.title" class="promo-image" (error)="onImageError($event)" />
-                        <div class="promo-body">
-                            <h3>{{ item.title }}</h3>
-                            <p class="mb-0">{{ item.desc }}</p>
-                        </div>
                     </article>
                 </div>
                 }
             </div>
         </div>
     </section>
+
+    @if (selectedPromotion) {
+    <div class="promo-modal-backdrop" (click)="closePromotion()" aria-hidden="true"></div>
+    <section class="promo-modal" role="dialog" aria-modal="true" [attr.aria-label]="selectedPromotion.title">
+        <button type="button" class="promo-modal-close" aria-label="Đóng" (click)="closePromotion()">&times;</button>
+
+        <img [src]="selectedPromotion.image" [alt]="selectedPromotion.title" class="promo-modal-image"
+            (error)="onImageError($event)" />
+
+        <div class="promo-modal-content">
+            <p class="promo-modal-tag mb-2">Chi tiết khuyến mãi</p>
+            <h3 class="promo-modal-title mb-2">{{ selectedPromotion.title }}</h3>
+            <p class="promo-modal-price mb-3">Ưu đãi: {{ selectedPromotion.price }}</p>
+            <p class="promo-modal-desc mb-0">{{ selectedPromotion.desc }}</p>
+        </div>
+    </section>
+    }
 
     <section class="about-section pb-5">
         <div class="container">

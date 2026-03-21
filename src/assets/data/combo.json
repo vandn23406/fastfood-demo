@@ -438,5 +438,338 @@
                 ]
             }
         }
+    },
+    {
+        "id": "CB005",
+        "name": "Combo 5 – Tiết kiệm",
+        "price": 45000,
+        "image": "/assets/images/CB005.png",
+        "description": "Combo gồm 1 Burger (bò/gà/tôm) và 1 ly nước ngọt. Phù hợp ăn nhẹ, tiết kiệm.",
+        "rating": 4.6,
+        "reviewCount": 70,
+        "sold": 180,
+        "options": {
+            "burgerType": {
+                "label": "Chọn loại Burger",
+                "type": "single",
+                "required": true,
+                "items": [
+                    {
+                        "name": "Burger bò",
+                        "price": 0
+                    },
+                    {
+                        "name": "Burger gà giòn",
+                        "price": 0
+                    },
+                    {
+                        "name": "Burger tôm",
+                        "price": 0
+                    }
+                ]
+            },
+            "drinkType": {
+                "label": "Chọn loại nước",
+                "type": "single",
+                "required": true,
+                "items": [
+                    {
+                        "name": "Coca",
+                        "price": 0
+                    },
+                    {
+                        "name": "Pepsi",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sprite",
+                        "price": 0
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "CB006",
+        "name": "Combo 6 – Ăn vặt",
+        "price": 45000,
+        "image": "/assets/images/CB006.png",
+        "description": "Combo gồm 1 khoai tây (thường/phô mai), 1 kem (tùy chọn) và 1 trà trái cây. Phù hợp ăn xế.",
+        "rating": 4.7,
+        "reviewCount": 92,
+        "sold": 260,
+        "options": {
+            "friesType": {
+                "label": "Chọn loại Khoai tây",
+                "type": "single",
+                "required": true,
+                "items": [
+                    {
+                        "name": "Khoai tây chiên",
+                        "price": 0
+                    },
+                    {
+                        "name": "Khoai tây lắc phô mai",
+                        "price": 5000
+                    }
+                ]
+            },
+            "iceCreamType": {
+                "label": "Chọn loại Kem",
+                "type": "single",
+                "required": true,
+                "items": [
+                    {
+                        "name": "Kem vani",
+                        "price": 0
+                    },
+                    {
+                        "name": "Kem socola",
+                        "price": 0
+                    },
+                    {
+                        "name": "Kem matcha",
+                        "price": 0
+                    },
+                    {
+                        "name": "Kem mix",
+                        "price": 5000
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "CB007",
+        "name": "Combo 7 – No đã",
+        "price": 99000,
+        "image": "/assets/images/CB007.png",
+        "description": "Combo gồm 1 Burger, 1 gà rán (1 miếng), 1 khoai tây và 1 nước ngọt. Đầy đủ năng lượng cho 1 người ăn no.",
+        "rating": 4.8,
+        "reviewCount": 110,
+        "sold": 300,
+        "options": {
+            "burgerType": {
+                "label": "Chọn loại Burger",
+                "type": "single",
+                "required": true,
+                "items": [
+                    {
+                        "name": "Burger bò",
+                        "price": 0
+                    },
+                    {
+                        "name": "Burger gà giòn",
+                        "price": 0
+                    },
+                    {
+                        "name": "Burger tôm",
+                        "price": 0
+                    }
+                ]
+            },
+            "chickenType": {
+                "label": "Chọn loại Gà rán",
+                "type": "single",
+                "required": true,
+                "items": [
+                    {
+                        "name": "Gà rán truyền thống",
+                        "price": 0
+                    },
+                    {
+                        "name": "Gà rán siêu giòn",
+                        "price": 3000
+                    }
+                ]
+            },
+            "chickenSauce": {
+                "label": "Chọn sốt cho Gà",
+                "type": "single",
+                "required": true,
+                "items": [
+                    {
+                        "name": "Sốt phô mai",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt BBQ",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt cay",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt tiêu đen",
+                        "price": 0
+                    }
+                ]
+            },
+            "drinkType": {
+                "label": "Chọn loại nước",
+                "type": "single",
+                "required": true,
+                "items": [
+                    {
+                        "name": "Coca",
+                        "price": 0
+                    },
+                    {
+                        "name": "Pepsi",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sprite",
+                        "price": 0
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "CB008",
+        "name": "Combo 8 – Premium",
+        "price": 149000,
+        "image": "/assets/images/CB008.png",
+        "description": "Combo gồm 1 Mỳ Ý, 2 gà rán, 1 khoai tây phô mai và 1 trà trái cây. Trải nghiệm cao cấp, no lâu.",
+        "rating": 4.9,
+        "reviewCount": 150,
+        "sold": 350,
+        "options": {
+            "pastaType": {
+                "label": "Chọn loại Mỳ Ý",
+                "type": "single",
+                "required": true,
+                "items": [
+                    {
+                        "name": "Mỳ Ý sốt bò bằm",
+                        "price": 0
+                    },
+                    {
+                        "name": "Mỳ Ý gà giòn",
+                        "price": 0
+                    },
+                    {
+                        "name": "Mỳ Ý sốt kem nấm",
+                        "price": 0
+                    }
+                ]
+            },
+            "chicken1Sauce": {
+                "label": "Sốt gà 1",
+                "type": "single",
+                "required": true,
+                "items": [
+                    {
+                        "name": "Sốt phô mai",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt BBQ",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt cay",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt tiêu đen",
+                        "price": 0
+                    }
+                ]
+            },
+            "chicken2Sauce": {
+                "label": "Sốt gà 2",
+                "type": "single",
+                "required": true,
+                "items": [
+                    {
+                        "name": "Sốt phô mai",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt BBQ",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt cay",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sốt tiêu đen",
+                        "price": 0
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": "CB009",
+        "name": "Combo 9 – Đã cơn thèm",
+        "price": 79000,
+        "image": "/assets/images/CB009.png",
+        "description": "Combo gồm 1 Mỳ Ý (tùy chọn sốt), 1 khoai tây chiên và 1 nước ngọt. Phù hợp cho bữa ăn nhanh nhưng vẫn đủ no.",
+        "rating": 4.8,
+        "reviewCount": 105,
+        "sold": 290,
+        "options": {
+            "pastaType": {
+                "label": "Chọn loại Mỳ Ý",
+                "type": "single",
+                "required": true,
+                "items": [
+                    {
+                        "name": "Mỳ Ý sốt bò bằm",
+                        "price": 0
+                    },
+                    {
+                        "name": "Mỳ Ý gà giòn",
+                        "price": 0
+                    },
+                    {
+                        "name": "Mỳ Ý sốt kem nấm",
+                        "price": 0
+                    }
+                ]
+            },
+            "drinkType": {
+                "label": "Chọn loại nước",
+                "type": "single",
+                "required": true,
+                "items": [
+                    {
+                        "name": "Coca",
+                        "price": 0
+                    },
+                    {
+                        "name": "Pepsi",
+                        "price": 0
+                    },
+                    {
+                        "name": "Sprite",
+                        "price": 0
+                    }
+                ]
+            },
+            "drinkSize": {
+                "label": "Size nước",
+                "type": "single",
+                "items": [
+                    {
+                        "name": "Thường",
+                        "price": 0
+                    },
+                    {
+                        "name": "Lớn",
+                        "price": 5000
+                    },
+                    {
+                        "name": "Siêu lớn",
+                        "price": 10000
+                    }
+                ]
+            }
+        }
     }
 ]

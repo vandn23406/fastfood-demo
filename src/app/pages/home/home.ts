@@ -80,6 +80,9 @@ export class Home {
     },
   ];
 
+  readonly mainCategoryIds: string[] = ['burger', 'pasta', 'fried-chicken'];
+  readonly sideDishCategoryIds: string[] = ['ice-cream', 'drinks', 'fries'];
+
   displayedMenuProducts: ProductItem[] = [];
   allMenuProducts: ProductItem[] = [];
   readonly itemsPerPage = 8;
@@ -87,6 +90,7 @@ export class Home {
   featuredCombos: ComboItem[] = [];
 
   readonly promotions: PromotionItem[] = PROMOTION_ITEMS;
+  selectedPromotion: PromotionItem | null = null;
 
   onImageError(event: Event): void {
     const target = event.target as HTMLImageElement | null;
@@ -101,8 +105,24 @@ export class Home {
     return item.name;
   }
 
+  get mainCategories(): CategoryItem[] {
+    return this.categories.filter((item) => this.mainCategoryIds.includes(item.id));
+  }
+
+  get sideDishCategories(): CategoryItem[] {
+    return this.categories.filter((item) => this.sideDishCategoryIds.includes(item.id));
+  }
+
   trackByPromotion(_index: number, item: PromotionItem): string {
     return item.title;
+  }
+
+  openPromotion(item: PromotionItem): void {
+    this.selectedPromotion = item;
+  }
+
+  closePromotion(): void {
+    this.selectedPromotion = null;
   }
 
   trackByProductId(_index: number, item: ProductItem): string {
@@ -178,6 +198,20 @@ export class Home {
       price: product.price,
       quantity: 1,
       selectedOptions: [],
+    });
+  }
+
+  onFeaturedComboViewDetail(comboId: string): void {
+    this.router.navigate(['/combo-detail', comboId]);
+  }
+
+  onFeaturedComboAdd(comboId: string): void {
+    this.onFeaturedComboViewDetail(comboId);
+  }
+
+  goToBurgerProducts(): void {
+    this.router.navigate(['/products'], {
+      queryParams: { category: 'burger' },
     });
   }
 

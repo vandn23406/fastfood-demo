@@ -71,16 +71,21 @@
 
 .btn-outline-brand {
     background: transparent;
-    color: #ffe2bf;
-    border: 2px solid #f1b577;
+    color: #ff9800;
+    border: 2px solid #ff9800;
     border-radius: 40px;
     padding: 14px 28px;
-    font-weight: 600;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(255, 152, 0, 0.08);
+    transition: background 0.18s, color 0.18s, border-color 0.18s;
 }
 
-.btn-outline-brand:hover {
-    background: rgba(255, 203, 141, 0.16);
-    color: #fff3e4;
+.btn-outline-brand:hover,
+.btn-outline-brand:focus {
+    background: #ff9800;
+    color: #fffbe6;
+    border-color: #ff9800;
+    box-shadow: 0 4px 16px rgba(255, 152, 0, 0.18);
 }
 
 .hero-food {
@@ -217,9 +222,343 @@
     overflow: hidden;
 }
 
+.side-dish-section .category-image-wrap {
+    aspect-ratio: 16 / 9;
+}
+
 .product-grid {
     --bs-gutter-y: 5.5rem;
     margin-top: 1.25rem;
+}
+
+.combo-section .section-head {
+    margin-bottom: 0.25rem !important;
+}
+
+.combo-section .combo-grid {
+    margin-top: 0;
+}
+
+.burger-ingredients-card {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding: clamp(18px, 3vw, 30px);
+}
+
+.burger-section-title {
+    color: #3E1B12;
+    text-align: left;
+}
+
+.ingredient-item {
+    display: grid;
+    grid-template-columns: minmax(96px, 132px) 1fr;
+    align-items: center;
+    gap: 0.9rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 0;
+}
+
+.ingredient-copy {
+    min-width: 0;
+    order: 2;
+}
+
+.ingredient-title {
+    margin: 0 0 0.35rem;
+    color: #7d2f1f;
+    font-size: 1.04rem;
+    font-weight: 800;
+}
+
+.ingredient-desc {
+    margin: 0;
+    color: rgba(62, 27, 18, 0.86);
+    line-height: 1.62;
+}
+
+.ingredient-thumb {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0;
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+    filter:
+        drop-shadow(0 8px 10px rgba(62, 27, 18, 0.2)) drop-shadow(0 0 14px rgba(224, 139, 44, 0.24));
+    transform-origin: center;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    animation: ingredientFloat 3.8s ease-in-out infinite;
+}
+
+.burger-explode-zone {
+    position: relative;
+    display: grid;
+    place-items: center;
+    isolation: isolate;
+    cursor: pointer;
+}
+
+.burger-explode-zone::before,
+.burger-explode-zone::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 54%;
+    width: 42%;
+    aspect-ratio: 1 / 1;
+    border-radius: 999px;
+    transform: translate(-50%, -50%) scale(0.4);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.burger-explode-zone::before {
+    background: radial-gradient(circle, rgba(255, 196, 111, 0.58) 0%, rgba(255, 196, 111, 0.18) 45%, rgba(255, 196, 111, 0) 74%);
+}
+
+.burger-explode-zone::after {
+    border: 2px solid rgba(255, 167, 72, 0.52);
+}
+
+.burger-particle {
+    position: absolute;
+    left: 50%;
+    top: 52%;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.25);
+    pointer-events: none;
+    z-index: 1;
+    background: radial-gradient(circle at 35% 35%, #fff7e9 0%, #ffc87b 36%, #e0832d 100%);
+}
+
+.burger-particle.p1 {
+    --tx: -180px;
+    --ty: -136px;
+    --delay: 0ms;
+}
+
+.burger-particle.p2 {
+    --tx: -204px;
+    --ty: -26px;
+    --delay: 45ms;
+}
+
+.burger-particle.p3 {
+    --tx: -140px;
+    --ty: 102px;
+    --delay: 90ms;
+}
+
+.burger-particle.p4 {
+    --tx: -18px;
+    --ty: -170px;
+    --delay: 125ms;
+}
+
+.burger-particle.p5 {
+    --tx: 168px;
+    --ty: -122px;
+    --delay: 70ms;
+}
+
+.burger-particle.p6 {
+    --tx: 210px;
+    --ty: -12px;
+    --delay: 30ms;
+}
+
+.burger-particle.p7 {
+    --tx: 152px;
+    --ty: 106px;
+    --delay: 105ms;
+}
+
+.burger-particle.p8 {
+    --tx: 14px;
+    --ty: 170px;
+    --delay: 150ms;
+}
+
+.burger-visual-main {
+    width: min(100%, 640px);
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    filter:
+        drop-shadow(0 16px 20px rgba(62, 27, 18, 0.22)) drop-shadow(0 0 24px rgba(224, 139, 44, 0.25));
+    position: relative;
+    z-index: 2;
+    transition: transform 0.36s cubic-bezier(0.19, 1, 0.22, 1), filter 0.36s ease;
+    animation: burgerHeroFloat 5.6s ease-in-out infinite;
+}
+
+.ingredient-item:nth-child(2) .ingredient-thumb {
+    animation-delay: 0.35s;
+}
+
+.ingredient-item:nth-child(3) .ingredient-thumb {
+    animation-delay: 0.7s;
+}
+
+.ingredient-item:nth-child(4) .ingredient-thumb {
+    animation-delay: 1.05s;
+}
+
+.ingredient-item:nth-child(5) .ingredient-thumb {
+    animation-delay: 1.4s;
+}
+
+.ingredient-item:hover .ingredient-thumb {
+    transform: translateY(-5px) scale(1.06) rotate(-2deg);
+    filter:
+        drop-shadow(0 14px 18px rgba(62, 27, 18, 0.28)) drop-shadow(0 0 26px rgba(224, 139, 44, 0.36));
+}
+
+.burger-explode-zone:hover .burger-visual-main {
+    transform: translateY(-15px) scale(1.095) rotate(-1.5deg);
+    filter:
+        drop-shadow(0 28px 34px rgba(62, 27, 18, 0.3)) drop-shadow(0 0 42px rgba(224, 139, 44, 0.5));
+    animation-play-state: paused;
+}
+
+.burger-explode-zone:hover::before {
+    animation: burgerShockGlow 720ms ease-out;
+}
+
+.burger-explode-zone:hover::after {
+    animation: burgerShockRing 780ms cubic-bezier(0.18, 0.67, 0.31, 1);
+}
+
+.burger-explode-zone:hover .burger-particle {
+    animation: burgerBurst 860ms cubic-bezier(0.16, 0.8, 0.26, 1) forwards;
+    animation-delay: var(--delay);
+}
+
+@keyframes ingredientFloat {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes burgerHeroFloat {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes burgerShockGlow {
+    0% {
+        opacity: 0.84;
+        transform: translate(-50%, -50%) scale(0.46);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2.2);
+    }
+}
+
+@keyframes burgerShockRing {
+    0% {
+        opacity: 0.85;
+        transform: translate(-50%, -50%) scale(0.3);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2.5);
+    }
+}
+
+@keyframes burgerBurst {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.2);
+    }
+
+    34% {
+        opacity: 1;
+        transform: translate(calc(-50% + (var(--tx) * 0.54)), calc(-50% + (var(--ty) * 0.54))) scale(1.08);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(0.1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ingredient-thumb,
+    .burger-visual-main {
+        animation: none;
+        transition: none;
+    }
+
+    .burger-explode-zone::before,
+    .burger-explode-zone::after,
+    .burger-particle {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .burger-ingredients-section .row.align-items-center {
+        --bs-gutter-x: 0.25rem;
+        max-width: 1120px;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+    }
+
+    .burger-ingredients-section .col-lg-5,
+    .burger-ingredients-section .col-lg-7 {
+        padding-left: calc(var(--bs-gutter-x) * 0.5);
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+    }
+
+    .burger-ingredients-section .col-lg-5 {
+        flex: 0 0 46%;
+        max-width: 46%;
+    }
+
+    .burger-ingredients-section .col-lg-7 {
+        flex: 0 0 54%;
+        max-width: 54%;
+    }
+
+    .burger-visual-main {
+        max-height: 640px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 @media (min-width: 992px) {
@@ -247,7 +586,7 @@
 }
 
 .promo-image {
-    height: 230px;
+    height: 100%;
 }
 
 .category-body,
@@ -275,10 +614,115 @@
     font-weight: 800;
 }
 
-.promo-body p {
-    margin-top: 8px;
-    color: rgba(62, 27, 18, 0.82);
-    line-height: 1.6;
+.promotion-section .promo-card {
+    cursor: pointer;
+    aspect-ratio: 4 / 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    overflow: visible;
+}
+
+.promotion-section .promo-image {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: contain;
+    border-radius: 20px;
+    background: transparent;
+    padding: 0;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(216, 139, 46, 0.15);
+}
+
+.promotion-section .promo-card:hover .promo-image {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 34px rgba(62, 27, 18, 0.14);
+    border-color: rgba(216, 139, 46, 0.45);
+}
+
+.promo-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(34, 15, 9, 0.56);
+    backdrop-filter: blur(2px);
+    z-index: 1200;
+}
+
+.promo-modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(900px, calc(100vw - 24px));
+    max-height: calc(100vh - 24px);
+    display: grid;
+    grid-template-columns: minmax(220px, 340px) 1fr;
+    background: #fffaf3;
+    border: 1px solid rgba(216, 139, 46, 0.35);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(25, 11, 8, 0.35);
+    overflow: hidden;
+    z-index: 1210;
+}
+
+.promo-modal-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(34, 15, 9, 0.66);
+    color: #fff;
+    font-size: 1.35rem;
+    line-height: 1;
+    z-index: 1;
+}
+
+.promo-modal-image {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    object-fit: contain;
+    background: #f6ebd8;
+}
+
+.promo-modal-content {
+    padding: 20px 22px;
+    overflow: auto;
+}
+
+.promo-modal-tag {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #9b4d31;
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+.promo-modal-title {
+    color: #2f160f;
+    font-size: clamp(1.15rem, 1.8vw, 1.55rem);
+    font-weight: 800;
+    line-height: 1.35;
+}
+
+.promo-modal-price {
+    font-weight: 700;
+    color: #8d2e19;
+}
+
+.promo-modal-desc {
+    margin: 0;
+    color: rgba(62, 27, 18, 0.85);
+    white-space: pre-line;
+    line-height: 1.7;
 }
 
 .about-card {
@@ -373,9 +817,20 @@ video.about-image {
         font-size: 0.96rem;
     }
 
-    .combo-image,
-    .promo-image {
+    .combo-image {
         height: 190px;
+    }
+
+    .promo-modal {
+        grid-template-columns: 1fr;
+    }
+
+    .promo-modal-image {
+        max-height: 240px;
+    }
+
+    .promo-modal-content {
+        max-height: calc(100vh - 280px);
     }
 
     .product-grid {
@@ -386,6 +841,19 @@ video.about-image {
     .floating-cart {
         padding: 0.68rem 0.95rem;
         gap: 6px;
+    }
+
+    .burger-ingredients-card {
+        padding: 12px 0;
+    }
+
+    .ingredient-title {
+        font-size: 1rem;
+    }
+
+    .ingredient-item {
+        grid-template-columns: minmax(70px, 98px) 1fr;
+        gap: 0.7rem;
     }
 }
 

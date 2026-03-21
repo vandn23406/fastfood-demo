@@ -10,6 +10,7 @@ import { PROMOTION_ITEMS, PromotionItem } from './promotion.data';
 })
 export class Promotion {
   readonly promotions: PromotionItem[] = PROMOTION_ITEMS;
+  private readonly expandedTitles = new Set<string>();
 
   onImageError(event: Event): void {
     const target = event.target as HTMLImageElement | null;
@@ -22,6 +23,18 @@ export class Promotion {
 
   trackByTitle(_index: number, item: PromotionItem): string {
     return item.title;
+  }
+
+  isExpanded(item: PromotionItem): boolean {
+    return this.expandedTitles.has(item.title);
+  }
+
+  expandPromotion(item: PromotionItem): void {
+    this.expandedTitles.add(item.title);
+  }
+
+  collapsePromotion(item: PromotionItem): void {
+    this.expandedTitles.delete(item.title);
   }
 
 }
