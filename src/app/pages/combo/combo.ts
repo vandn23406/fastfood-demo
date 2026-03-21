@@ -1,13 +1,14 @@
-import { CommonModule, CurrencyPipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component, DestroyRef, OnInit } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Router } from '@angular/router';
+import { ProductCard } from '../../core/product-card/product-card';
 import { ComboItem } from '../../interfaces/combo';
 import { Combo as ComboService } from '../../services/combo';
 
 @Component({
   selector: 'app-combo',
-  imports: [CommonModule, CurrencyPipe],
+  imports: [CommonModule, ProductCard],
   templateUrl: './combo.html',
   styleUrl: './combo.css',
 })
@@ -52,8 +53,7 @@ export class Combo implements OnInit {
     this.router.navigate(['/combo-detail', comboId]);
   }
 
-  onAddClick(event: Event, comboId: string): void {
-    event.stopPropagation();
+  onAddClick(comboId: string): void {
     this.viewComboDetail(comboId);
   }
 

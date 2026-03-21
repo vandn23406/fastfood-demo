@@ -1,9 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { take } from 'rxjs';
+import { ProductCard } from '../../core/product-card/product-card';
 import { ComboItem } from '../../interfaces/combo';
+import { ProductItem } from '../../interfaces/product';
+import { CartService } from '../../services/cart';
 import { Combo } from '../../services/combo';
+import { Product } from '../../services/product';
 import { PROMOTION_ITEMS, PromotionItem } from '../promotion/promotion.data';
 
 type CategoryItem = {
@@ -14,12 +18,17 @@ type CategoryItem = {
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, ProductCard],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
 export class Home {
-  constructor(private readonly comboService: Combo) { }
+  constructor(
+    private readonly comboService: Combo,
+    private readonly productService: Product,
+    private readonly cartService: CartService,
+    private readonly router: Router,
+  ) { }
 
   readonly heroImages: string[] = [
     '/Burger-xoa-nen.png',
@@ -71,6 +80,10 @@ export class Home {
     },
   ];
 
+  displayedMenuProducts: ProductItem[] = [];
+  allMenuProducts: ProductItem[] = [];
+  readonly itemsPerPage = 8;
+
   featuredCombos: ComboItem[] = [];
 
   readonly promotions: PromotionItem[] = PROMOTION_ITEMS;
@@ -92,6 +105,10 @@ export class Home {
     return item.title;
   }
 
+  trackByProductId(_index: number, item: ProductItem): string {
+    return item.id;
+  }
+
   ngOnInit(): void {
     this.preloadHeroImages();
     this.startHeroRotation();
@@ -101,6 +118,14 @@ export class Home {
       .pipe(take(1))
       .subscribe((combos) => {
         this.featuredCombos = combos.slice(0, 4);
+      });
+
+    this.productService
+      .getProducts()
+      .pipe(take(1))
+      .subscribe((products) => {
+        this.allMenuProducts = this.shuffleArray(products);
+        this.loadMoreMenuProducts();
       });
   }
 
@@ -120,6 +145,44 @@ export class Home {
       this.currentHeroImageIndex =
         (this.currentHeroImageIndex + 1) % this.heroImages.length;
     }, 3000);
+  }
+  private shuffleArray<T>(array: T[]): T[] {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  }
+
+  loadMoreMenuProducts(): void {
+    const currentLength = this.displayedMenuProducts.length;
+    const nextItems = this.allMenuProducts.slice(currentLength, currentLength + this.itemsPerPage);
+    this.displayedMenuProducts = [...this.displayedMenuProducts, ...nextItems];
+  }
+
+  onMenuProductViewDetail(productId: string): void {
+    this.router.navigate(['/product-detail', productId]);
+  }
+
+  onMenuProductAdd(productId: string): void {
+    const product = this.allMenuProducts.find((item) => item.id === productId);
+    if (!product) {
+      return;
+    }
+
+    this.cartService.addItem({
+      productId: product.id,
+      name: product.name,
+      image: product.image,
+      price: product.price,
+      quantity: 1,
+      selectedOptions: [],
+    });
+  }
+
+  get hasMoreMenuProducts(): boolean {
+    return this.displayedMenuProducts.length < this.allMenuProducts.length;
   }
 
   private preloadHeroImages(): void {
