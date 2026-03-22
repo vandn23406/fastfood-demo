@@ -725,6 +725,45 @@
     line-height: 1.7;
 }
 
+.policy-card {
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+}
+
+.policy-item {
+    padding: 0.35rem 0.75rem;
+}
+
+.policy-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1rem;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    font-size: 1.4rem;
+    color: #7d2f1f;
+    border: 1px solid rgba(216, 139, 46, 0.3);
+    background: linear-gradient(160deg, #fffaf0 0%, #f8efdc 100%);
+    box-shadow: 0 10px 18px rgba(153, 61, 41, 0.1);
+}
+
+.policy-title {
+    margin: 0 0 0.7rem;
+    color: #9b4d31;
+    font-size: clamp(1.2rem, 1.8vw, 1.9rem);
+    font-weight: 700;
+}
+
+.policy-desc {
+    margin: 0;
+    color: rgba(62, 27, 18, 0.86);
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
 .about-card {
     padding: clamp(16px, 2.8vw, 26px);
     background: linear-gradient(140deg, #fff 0%, #fff8ea 100%);
@@ -854,6 +893,22 @@ video.about-image {
     .ingredient-item {
         grid-template-columns: minmax(70px, 98px) 1fr;
         gap: 0.7rem;
+    }
+
+    .policy-card {
+        padding: 0;
+    }
+
+    .policy-item {
+        padding: 0.25rem 0.45rem;
+    }
+
+    .policy-title {
+        font-size: 1.35rem;
+    }
+
+    .policy-desc {
+        font-size: 0.98rem;
     }
 }
 
