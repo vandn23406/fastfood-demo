@@ -457,6 +457,10 @@
     font-weight: 500;
 }
 
+.related-products-row {
+    margin-top: 4.25rem;
+}
+
 .product-card {
     border-radius: 18px;
     background: linear-gradient(180deg, #ffffff 0%, #fff9ea 100%);
@@ -585,6 +589,10 @@
     .info-tabs .nav-item {
         flex: 0 0 auto;
     }
+
+    .related-products-row {
+        margin-top: 3.5rem;
+    }
 }
 
 .buy-now-backdrop {
@@ -658,6 +666,10 @@
 
     .action-row .btn {
         width: 100%;
+    }
+
+    .related-products-row {
+        margin-top: 3rem;
     }
 }
 

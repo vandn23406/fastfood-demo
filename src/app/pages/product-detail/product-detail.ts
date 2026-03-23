@@ -3,6 +3,7 @@ import { Component, DestroyRef, Input, OnChanges, OnInit, SimpleChanges } from '
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, switchMap } from 'rxjs';
+import { ProductCard } from '../../core/product-card/product-card';
 import { CartItem, CartItemInput } from '../../interfaces/cart';
 import { ProductItem, ProductOption, ProductOptionItem } from '../../interfaces/product';
 import { Cart } from '../cart/cart';
@@ -16,7 +17,7 @@ type ProductOptionEntry = {
 
 @Component({
   selector: 'app-product-detail',
-  imports: [CommonModule, CurrencyPipe, DecimalPipe],
+  imports: [CommonModule, CurrencyPipe, DecimalPipe, ProductCard],
   templateUrl: './product-detail.html',
   styleUrl: './product-detail.css',
 })
@@ -224,6 +225,22 @@ export class ProductDetail implements OnInit {
     }
 
     this.router.navigate(['/product-detail', productId]);
+  }
+
+  addRelatedProduct(productId: string): void {
+    const item = this.relatedProducts.find((product) => product.id === productId);
+    if (!item) {
+      return;
+    }
+
+    this.cartService.addItem({
+      productId: item.id,
+      name: item.name,
+      image: item.image,
+      price: item.price,
+      quantity: 1,
+      selectedOptions: [],
+    });
   }
 
   onImageError(event: Event): void {

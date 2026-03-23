@@ -9,7 +9,7 @@
                     "name": "Burger bò",
                     "price": 35000,
                     "image": "/assets/images/BG001.png",
-                    "description": "Burger bò với nhân thịt bò đậm vị, rau tươi và sốt đặc trưng BOX&BITE.",
+                    "description": "Burger bò cao cấp mang đến trải nghiệm hương vị đích thực với lớp nhân thịt bò được nướng chín tới, giữ nguyên độ ngọt và mọng nước. Kết hợp cùng lớp phô mai tan chảy béo ngậy, rau tươi giòn xốp và sốt đặc biệt thương hiệu độc quyền BOX&BITE, tất cả nằm gọn trong vỏ bánh brioche nướng bơ xém vàng thơm lừng.",
                     "ingredients": [
                         "Bánh mì brioche",
                         "Thịt bò nướng",
@@ -51,7 +51,7 @@
                     "name": "Burger gà giòn",
                     "price": 35000,
                     "image": "/assets/images/BG002.png",
-                    "description": "Burger gà giòn rụm bên ngoài, mềm bên trong, kết hợp sốt thơm béo dễ ăn.",
+                    "description": "Chiếc burger gà giòn là sự hòa quyện tuyệt vời của miếng phi lê gà tẩm gia vị tinh tế, khoác lên lớp bột chiên vàng ươm, giòn rụm bên ngoài mà ẩm mềm mọng nước bên trong. Ăn kèm dưa leo, xà lách tươi xanh và sốt mayo thơm béo đặc trưng được phết đều đặn trên nền bánh brioche mềm xốp.",
                     "ingredients": [
                         "Bánh mì brioche",
                         "Phi lê gà giòn",
@@ -93,7 +93,7 @@
                     "name": "Burger tôm",
                     "price": 35000,
                     "image": "/assets/images/BG003.png",
-                    "description": "Burger tôm chiên vàng với vị ngọt nhẹ tự nhiên, phù hợp cho bữa ăn nhanh tiện lợi.",
+                    "description": "Burger tôm biển mang đến hương vị tươi mát, thanh nhẹ nhờ phần nhân thịt tôm chất lượng tốt tẩm bột chiên vàng giòn tan. Cắn vào bên trong, vị ngọt thanh của hải sản kết hợp hài hòa đặc biệt cùng vị chua dịu của sốt tartar rưới đều trên ngập lớp xà lách tím, đem lại sự sảng khoái đánh thức vị giác.",
                     "ingredients": [
                         "Bánh mì brioche",
                         "Tôm tẩm bột chiên",
@@ -143,7 +143,7 @@
                     "name": "Mỳ Ý sốt bò bằm",
                     "price": 40000,
                     "image": "/assets/images/PA001.png",
-                    "description": "Mỳ Ý với sốt bò bằm đậm đà, nấu cùng cà chua và gia vị Ý.",
+                    "description": "Mỳ Ý sốt bò bằm mang đậm phong vị ẩm thực truyền thống với các sợi mỳ dai mềm vừa chín tới, hòa quyện với phần sốt cà chua đỏ mọng hầm lửa nhỏ kỹ càng cùng thịt bò bằm đậm đà. Thêm chút hương thảo mộc và phô mai parmesan, đây là mỹ vị vô cùng thân thuộc nhưng đầy sức lôi cuốn.",
                     "ingredients": [
                         "Mỳ Ý",
                         "Thịt bò bằm",
@@ -160,7 +160,7 @@
                     "name": "Mỳ Ý gà giòn",
                     "price": 40000,
                     "image": "/assets/images/PA002.png",
-                    "description": "Mỳ Ý ăn kèm gà chiên giòn, sốt cà chua đặc trưng.",
+                    "description": "Sự kết hợp độc đáo giữa hương vị tinh tế của sợi mỳ Ý kinh điển cùng độ giòn rụm bùng nổ của miếng gà rán tẩm bột chiên vàng. Sốt cà chua ngọt dịu êm ái thấm vào từng sợi mỳ, nâng tầm trải nghiệm hương vị đậm đà cùng phô mai parmesan ngậy mềm, xua tan hoàn toàn cơn đói của bạn thỏa mãn nhất.",
                     "ingredients": [
                         "Mỳ Ý",
                         "Gà chiên giòn",
@@ -176,7 +176,7 @@
                     "name": "Mỳ Ý sốt kem nấm",
                     "price": 40000,
                     "image": "/assets/images/PA003.png",
-                    "description": "Mỳ Ý với sốt kem nấm béo ngậy, thơm mùi nấm và bơ.",
+                    "description": "Bản giao hưởng của sự béo ngậy và nhã nhặn, với sợi mỳ được đắm chìm trong loại sốt kem sánh mịn màng, kết hợp cùng bơ lạt thơm lừng và nấm thái lát thanh ngọt tự nhiên. Vị béo và mặn nhẹ rắc đều phô mai lan tỏa ngây ngất nơi hậu vị khiến bạn không khỏi xao xuyến mãi không quên.",
                     "ingredients": [
                         "Mỳ Ý",
                         "Nấm",
@@ -201,7 +201,7 @@
                     "name": "Gà rán truyền thống (1 miếng)",
                     "price": 30000,
                     "image": "/assets/images/FC001.png",
-                    "description": "Gà rán truyền thống giòn rụm bên ngoài, mềm mọng bên trong.",
+                    "description": "Đỉnh cao gà rán với quy trình chiên chín kiểm soát nhiệt độ nghiêm ngặt, giữ trọn vẹn lớp da bọc bột thảo mộc mỏng bên ngoài giòn tan. Các thớ thịt đùi bên trong vẫn tiết ra mùi vị mọng nước ngọt ngào quyến rũ cực kỳ tự nhiên. Chấm vào các loại sốt đi kèm để kích hoạt trọn vẹn đỉnh cao hương vị.",
                     "ingredients": [
                         "Đùi gà",
                         "Bột chiên giòn",
@@ -241,7 +241,7 @@
                     "name": "Gà rán siêu giòn (1 miếng)",
                     "price": 33000,
                     "image": "/assets/images/FC002.png",
-                    "description": "Gà rán lớp vỏ siêu giòn, đậm vị, ăn kèm sốt tùy chọn.",
+                    "description": "Kết cấu lớp áo bột chiên siêu giòn như phá vỡ mọi chuẩn mực nhờ công thức gai giòn rộp rộp. Lớp da đậm đà hương vị mặn thanh ôm lấy những thớ thịt đùi mượt mà, nóng hổi thơm nức. Gia vị tẩm ướp kỹ càng từ sâu bên trong đem đến cảm giác thỏa mãn tối đa cho cơn thèm gà rán của bạn.",
                     "ingredients": [
                         "Đùi gà",
                         "Bột chiên siêu giòn",
@@ -289,7 +289,7 @@
                     "name": "Khoai tây chiên",
                     "price": 20000,
                     "image": "/assets/images/FR001.png",
-                    "description": "Khoai tây chiên vàng giòn, có thể chọn kích thước phần ăn.",
+                    "description": "Những cọng khoai tây chiên vóc dáng thon dài xém vàng ươm đẹp mắt, được chế biến chuẩn mực để đạt độ giòn tuyệt đối bên ngoài nhưng tơi xốp, bùi bùi ở trong ruột. Lớp muối mỏng rắc nhẹ để tăng vẻ mặn mà cực kỳ kích thích, sẵn sàng trở thành món khai vị hoặc nhâm nhi trọn vẹn cho mọi bàn ăn.",
                     "ingredients": [
                         "Khoai tây",
                         "Muối",
@@ -325,7 +325,7 @@
                     "name": "Khoai tây lắc phô mai",
                     "price": 25000,
                     "image": "/assets/images/FR002.png",
-                    "description": "Khoai tây chiên lắc phô mai thơm béo, có thể chọn kích thước.",
+                    "description": "Bữa tiệc vị giác được đẩy lên cao trào khi các cọng khoai tây chiên giòn tan được áo đều bởi lớp bột phô mai màu vàng cam ngọt ngào. Hương phô mai thơm nức mũi cùng vị mặn béo len lỏi sẽ lập tức khuấy động mọi giác quan, khiến bạn chỉ muốn bốc mãi không chần chừ nhâm nhi tới miếng cuối cùng.",
                     "ingredients": [
                         "Khoai tây",
                         "Bột phô mai",
@@ -370,7 +370,13 @@
                     "name": "Kem vani",
                     "price": 15000,
                     "image": "/assets/images/IC001.png",
-                    "description": "Kem vani mát lạnh, vị ngọt nhẹ.",
+                    "description": "Kem vani mát lạnh với hương vani thơm dịu, độ ngọt vừa phải và kết cấu mịn mềm, tan chậm trong miệng, phù hợp để tráng miệng sau bữa ăn hoặc thưởng thức nhanh trong những ngày nắng nóng.",
+                    "ingredients": [
+                        "Sữa",
+                        "Kem tươi",
+                        "Đường",
+                        "Hương vani"
+                    ],
                     "rating": 4.7,
                     "reviewCount": 40,
                     "sold": 120
@@ -380,7 +386,13 @@
                     "name": "Kem socola",
                     "price": 15000,
                     "image": "/assets/images/IC002.png",
-                    "description": "Kem socola đậm vị cacao.",
+                    "description": "Kem socola đậm vị cacao với mùi thơm đặc trưng, hậu vị cân bằng giữa ngọt và hơi đắng nhẹ, chất kem sánh mịn giúp từng muỗng kem mang cảm giác béo vừa phải mà không ngấy.",
+                    "ingredients": [
+                        "Sữa",
+                        "Kem tươi",
+                        "Bột cacao",
+                        "Đường"
+                    ],
                     "rating": 4.8,
                     "reviewCount": 55,
                     "sold": 140
@@ -390,7 +402,13 @@
                     "name": "Kem matcha",
                     "price": 15000,
                     "image": "/assets/images/IC003.png",
-                    "description": "Kem matcha thơm vị trà xanh.",
+                    "description": "Kem matcha thơm mùi trà xanh tự nhiên, vị thanh nhẹ và ít ngọt, kết hợp độ mát sảng khoái cùng kết cấu mềm mịn tạo nên lựa chọn phù hợp cho khách thích hương vị tinh tế, không quá đậm đường.",
+                    "ingredients": [
+                        "Sữa",
+                        "Kem tươi",
+                        "Bột matcha",
+                        "Đường"
+                    ],
                     "rating": 4.6,
                     "reviewCount": 32,
                     "sold": 90
@@ -400,7 +418,13 @@
                     "name": "Kem mix",
                     "price": 20000,
                     "image": "/assets/images/IC004.png",
-                    "description": "Kem mix 2 vị tùy chọn.",
+                    "description": "Kem mix cho phép chọn kết hợp 2 vị yêu thích trong cùng một phần ăn, giúp bạn cân bằng giữa vị béo, ngọt và thanh mát theo sở thích cá nhân, phù hợp khi muốn đổi vị mà vẫn giữ khẩu phần vừa đủ.",
+                    "ingredients": [
+                        "Sữa",
+                        "Kem tươi",
+                        "Đường",
+                        "Hương vị tùy chọn"
+                    ],
                     "rating": 4.9,
                     "reviewCount": 70,
                     "sold": 180,
@@ -440,7 +464,12 @@
                     "name": "Nước ngọt có gas",
                     "price": 15000,
                     "image": "/assets/images/DR001.png",
-                    "description": "Nước ngọt có gas mát lạnh.",
+                    "description": "Nước ngọt có gas được phục vụ lạnh sâu, mang lại cảm giác sảng khoái tức thì với vị ngọt dễ uống và độ gas vừa đủ, thích hợp dùng kèm các món chiên nướng để cân bằng vị giác trong bữa ăn.",
+                    "ingredients": [
+                        "Nước có gas",
+                        "Đường",
+                        "Hương liệu thực phẩm"
+                    ],
                     "rating": 4.6,
                     "reviewCount": 80,
                     "sold": 350,
@@ -490,7 +519,13 @@
                     "name": "Trà trái cây",
                     "price": 20000,
                     "image": "/assets/images/DR002.png",
-                    "description": "Trà trái cây thanh mát.",
+                    "description": "Trà trái cây thanh mát với nền trà thơm nhẹ hòa cùng hương trái cây tươi, vị ngọt cân đối và hậu vị dịu, phù hợp để giải khát cả ngày và đặc biệt dễ kết hợp với các món chính nhiều đạm.",
+                    "ingredients": [
+                        "Trà đen",
+                        "Nước cốt trái cây",
+                        "Đường",
+                        "Đá"
+                    ],
                     "rating": 4.7,
                     "reviewCount": 65,
                     "sold": 210,
@@ -521,7 +556,13 @@
                     "name": "Trà sữa truyền thống",
                     "price": 20000,
                     "image": "/assets/images/DR003.png",
-                    "description": "Trà sữa vị truyền thống.",
+                    "description": "Trà sữa truyền thống có hương trà rõ ràng kết hợp cùng vị sữa béo nhẹ, độ ngọt vừa phải và dễ uống, mang lại cảm giác quen thuộc cho người thích phong cách trà sữa cổ điển, không quá cầu kỳ nhưng vẫn tròn vị.",
+                    "ingredients": [
+                        "Trà đen",
+                        "Sữa",
+                        "Đường",
+                        "Đá"
+                    ],
                     "rating": 4.8,
                     "reviewCount": 90,
                     "sold": 300,
@@ -552,7 +593,13 @@
                     "name": "Trà sữa topping",
                     "price": 25000,
                     "image": "/assets/images/DR004.png",
-                    "description": "Trà sữa kèm topping hấp dẫn.",
+                    "description": "Trà sữa topping có nền trà sữa thơm béo kết hợp cùng phần topping dai giòn đa dạng, tạo trải nghiệm vừa uống vừa nhai thú vị, phù hợp cho khách muốn một ly đồ uống no hơn và có nhiều lớp hương vị hơn.",
+                    "ingredients": [
+                        "Trà đen",
+                        "Sữa",
+                        "Đường",
+                        "Topping tổng hợp"
+                    ],
                     "rating": 4.9,
                     "reviewCount": 120,
                     "sold": 420,
@@ -591,28 +638,62 @@
                     "name": "Sốt phô mai",
                     "price": 5000,
                     "image": "/assets/images/SA001.png",
-                    "description": "Sốt phô mai béo ngậy."
+                    "description": "Sốt phô mai có độ sánh mịn và vị béo đậm vừa phải, giúp món chiên hoặc burger thêm thơm ngậy, tạo lớp phủ hấp dẫn mà vẫn giữ được hương vị chính của món ăn.",
+                    "ingredients": [
+                        "Phô mai",
+                        "Sữa",
+                        "Bơ"
+                    ],
+                    "rating": 4.7,
+                    "reviewCount": 36,
+                    "sold": 160
                 },
                 {
                     "id": "SA002",
                     "name": "Sốt BBQ",
                     "price": 5000,
                     "image": "/assets/images/SA002.png",
-                    "description": "Sốt BBQ đậm vị."
+                    "description": "Sốt BBQ mang hương khói nhẹ đặc trưng, cân bằng giữa vị ngọt, mặn và chua dịu, rất phù hợp để chấm gà rán, khoai tây hoặc burger khi bạn muốn tăng chiều sâu hương vị cho món ăn.",
+                    "ingredients": [
+                        "Cà chua",
+                        "Đường nâu",
+                        "Gia vị BBQ"
+                    ],
+                    "rating": 4.8,
+                    "reviewCount": 42,
+                    "sold": 190
                 },
                 {
                     "id": "SA003",
                     "name": "Sốt cay",
                     "price": 5000,
                     "image": "/assets/images/SA003.png",
-                    "description": "Sốt cay kích thích vị giác."
+                    "description": "Sốt cay có vị cay rõ nhưng không gắt, hòa quyện cùng chút ngọt và thơm tỏi, giúp kích thích vị giác và làm món ăn trở nên nổi bật hơn, đặc biệt hợp với các món chiên cần điểm nhấn mạnh mẽ.",
+                    "ingredients": [
+                        "Ớt",
+                        "Tỏi",
+                        "Đường",
+                        "Giấm"
+                    ],
+                    "rating": 4.6,
+                    "reviewCount": 31,
+                    "sold": 145
                 },
                 {
                     "id": "SA004",
                     "name": "Sốt tiêu đen",
                     "price": 5000,
                     "image": "/assets/images/SA004.png",
-                    "description": "Sốt tiêu đen thơm nồng."
+                    "description": "Sốt tiêu đen thơm nồng với mùi tiêu xay đặc trưng, vị cay ấm nhẹ và độ sánh vừa đủ, phù hợp để ăn kèm gà rán hoặc burger nhằm tăng cảm giác đậm đà và dậy hương cho từng miếng ăn.",
+                    "ingredients": [
+                        "Tiêu đen",
+                        "Sữa",
+                        "Bơ",
+                        "Gia vị"
+                    ],
+                    "rating": 4.7,
+                    "reviewCount": 34,
+                    "sold": 152
                 }
             ]
         }

@@ -65,6 +65,10 @@ export class CartService {
         this.setItems(this.cartItemsSubject.value.filter((item) => item.cartId !== cartId));
     }
 
+    clearItems(): void {
+        this.setItems([]);
+    }
+
     private setItems(items: CartItem[]): void {
         this.cartItemsSubject.next(items);
         this.saveToStorage(items);

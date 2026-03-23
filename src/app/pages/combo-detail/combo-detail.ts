@@ -3,8 +3,10 @@ import { Component, DestroyRef, OnInit } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, switchMap } from 'rxjs';
+import { ProductCard } from '../../core/product-card/product-card';
 import { CartItem, CartItemInput } from '../../interfaces/cart';
 import { ComboItem, ComboOption, ComboOptionItem } from '../../interfaces/combo';
+import { ProductItem } from '../../interfaces/product';
 import { Cart } from '../cart/cart';
 import { CartService } from '../../services/cart';
 import { Combo as ComboService } from '../../services/combo';
@@ -16,7 +18,7 @@ type ComboOptionEntry = {
 
 @Component({
   selector: 'app-combo-detail',
-  imports: [CommonModule, CurrencyPipe, DecimalPipe],
+  imports: [CommonModule, CurrencyPipe, DecimalPipe, ProductCard],
   templateUrl: './combo-detail.html',
   styleUrl: './combo-detail.css',
 })
@@ -177,6 +179,22 @@ export class ComboDetail implements OnInit {
     this.router.navigate(['/combo-detail', comboId]);
   }
 
+  addRelatedCombo(comboId: string): void {
+    const item = this.relatedCombos.find((combo) => combo.id === comboId);
+    if (!item) {
+      return;
+    }
+
+    this.cartService.addItem({
+      productId: item.id,
+      name: item.name,
+      image: item.image,
+      price: item.price,
+      quantity: 1,
+      selectedOptions: [],
+    });
+  }
+
   onImageError(event: Event): void {
     const target = event.target as HTMLImageElement | null;
     if (!target) {
@@ -197,6 +215,23 @@ export class ComboDetail implements OnInit {
 
   trackByCombo(_index: number, item: ComboItem): string {
     return item.id;
+  }
+
+  trackByRelatedProduct(_index: number, item: ProductItem): string {
+    return item.id;
+  }
+
+  get relatedComboProducts(): ProductItem[] {
+    return this.relatedCombos.map((item) => ({
+      id: item.id,
+      name: item.name,
+      price: item.price,
+      image: item.image,
+      description: item.description,
+      rating: item.rating,
+      reviewCount: item.reviewCount,
+      sold: item.sold,
+    }));
   }
 
   getFilledStars(): number[] {

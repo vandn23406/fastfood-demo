@@ -39,13 +39,26 @@ Share bài viết để không bỏ lỡ deal hot này!
 Đặt hàng ngay thôi nào 🚀`
     },
     {
-        title: "Ưu đãi theo khung giờ",
+        title: "ƯU ĐÃI KHUNG GIỜ ĂN TRƯA",
         price: "Giảm đến 20% Các combo sau",
         image: '/assets/images/PR002.png',
         desc: `TÌM ĐỒNG ĐỘI "GIẢI CỨU" CƠN ĐÓI TRƯA NAY! 🍔🍝
 Người ta đợi đến giờ tan tầm, còn tụi mình đợi đến 11:00 AM để "oanh tạc" GIỜ VÀNG GIÁ SỐC! 😋
 Cần thanh đạm có Mỳ Ý + Trà Trái Cây. Cần "xôi thịt" đã có Combo Gà Rán + Burger + Coca mát lạnh. Giá thì "hạt dẻ" chỉ từ 55 cành, ăn ngon mà không lo cháy túi!
 ⏰ Duy nhất từ 11h - 13h hàng ngày. 🔥 Đừng để cái bụng đói biểu tình, tag ngay đứa bạn thân vào đây rồi lập kèo tới BOX & BITE thôi nào!`
-
+    },
+    {
+        title: " HỌC HẾT MÌNH - BITE NHIỆT TÌNH CÙNG BOX & BITE! ",
+        price: "Giảm ngay 20% toàn bộ menu cho học sinh - sinh viên",
+        image: '/assets/images/PR003.png',
+        desc: `📢 TIN CHẤN ĐỘNG: HỌC HẾT MÌNH - BITE NHIỆT TÌNH CÙNG BOX & BITE! 📢
+Học tập căng thẳng, deadline bủa vây? Để Box & Bite tiếp sức cho bạn bằng "vibe" cực chill và menu cực cháy! 🔥
+🎁 ƯU ĐÃI ĐỘC QUYỀN: GIẢM NGAY 20% TẤT CẢ MÓN LẺ Chỉ cần bạn là Học sinh - Sinh viên, ví tiền cứ để tụi mình lo!
+✨ Cách nhận ưu đãi cực dễ:
+Ghé ngay Box & Bite.
+"Show" nhẹ chiếc thẻ HSSV quyền năng.
+Thưởng thức Burger ngập nhân, Gà rán giòn tan với giá "hạt dẻ".
+Mời ngay hội bạn thân qua "đánh chén" để bật mood học tập ngay thôi nào! 🍔🍗🥤
+`
     }
 ];

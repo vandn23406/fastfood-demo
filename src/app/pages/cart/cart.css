@@ -250,6 +250,66 @@
     font-weight: 600;
 }
 
+.bank-payment-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 4250;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(26, 10, 7, 0.56);
+    backdrop-filter: blur(2px);
+    padding: 18px;
+}
+
+.bank-payment-dialog {
+    width: min(420px, 100%);
+    border-radius: 20px;
+    background: #fff;
+    padding: 22px;
+    box-shadow: 0 18px 46px rgba(0, 0, 0, 0.22);
+    text-align: center;
+}
+
+.bank-payment-note {
+    color: rgba(62, 27, 18, 0.82);
+    font-size: 0.95rem;
+}
+
+.bank-payment-qr {
+    width: min(280px, 100%);
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    padding: 8px;
+    border-radius: 16px;
+    border: 1px solid rgba(62, 27, 18, 0.12);
+    background: #fff;
+}
+
+.bank-payment-status {
+    color: var(--secondary);
+    font-weight: 700;
+}
+
+.bank-payment-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.bank-cancel-btn {
+    border: 1px solid rgba(62, 27, 18, 0.18);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--text);
+    font-weight: 700;
+    padding: 0.85rem 1rem;
+}
+
+.bank-cancel-btn:hover {
+    background: rgba(62, 27, 18, 0.06);
+}
+
 .order-success-backdrop {
     position: fixed;
     inset: 0;
@@ -286,28 +346,47 @@
 .recommend-card {
     border-radius: 14px;
     background: #fff;
-    box-shadow: 0 10px 22px rgba(62, 27, 18, 0.09);
+    border: 1px solid rgba(216, 139, 46, 0.24);
+    box-shadow: 0 14px 28px rgba(62, 27, 18, 0.14);
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    height: 100%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.recommend-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(216, 139, 46, 0.48);
+    box-shadow: 0 18px 34px rgba(62, 27, 18, 0.18);
 }
 
 .recommend-image {
     width: 100%;
-    height: 120px;
-    object-fit: cover;
+    height: 140px;
+    object-fit: contain;
+    background: #fff;
+    padding: 6px;
 }
 
 .recommend-body {
     padding: 10px;
-    display: grid;
-    align-content: start;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
     gap: 6px;
 }
 
 .recommend-name {
     font-size: 0.95rem;
     font-weight: 700;
+    line-height: 1.3;
+    min-height: 2.46em;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .recommend-price {
@@ -323,6 +402,7 @@
     color: #fff;
     padding: 0.35rem 0.65rem;
     font-weight: 600;
+    margin-top: auto;
     transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 

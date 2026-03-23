@@ -165,17 +165,12 @@
             <h3 class="section-title small mb-0">Combo liên quan</h3>
         </div>
 
-        <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-lg-4">
-            @for (item of relatedCombos; track trackByCombo($index, item)) {
+        <div class="row g-4 related-products-row row-cols-1 row-cols-sm-2 row-cols-lg-4">
+            @for (item of relatedComboProducts; track trackByRelatedProduct($index, item)) {
             <div class="col">
-                <article class="product-card h-100" role="button" tabindex="0" (click)="openRelatedCombo(item.id)"
-                    (keydown.enter)="openRelatedCombo(item.id)" (keydown.space)="openRelatedCombo(item.id)">
-                    <img [src]="item.image" [alt]="item.name" class="product-thumb" (error)="onImageError($event)" />
-                    <div class="product-body">
-                        <h4 class="related-name mb-1">{{ item.name }}</h4>
-                        <p class="related-price mb-0">{{ item.price | currency:'VND':'symbol':'1.0-0':'vi-VN' }}</p>
-                    </div>
-                </article>
+                <app-product-card [item]="item" (viewDetail)="openRelatedCombo($event)"
+                    (addClick)="addRelatedCombo($event)">
+                </app-product-card>
             </div>
             }
         </div>

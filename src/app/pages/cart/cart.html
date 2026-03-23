@@ -208,6 +208,37 @@
             </div>
         </div>
 
+        @if (bankPaymentOpen) {
+        <div class="bank-payment-backdrop" (click)="closeBankPaymentPopup()">
+            <div class="bank-payment-dialog" role="dialog" aria-modal="true" aria-label="Xác nhận chuyển khoản"
+                (click)="$event.stopPropagation()">
+                <h3 class="mb-2">Quét mã QR để chuyển khoản</h3>
+                <p class="bank-payment-note mb-3">
+                    Tổng thanh toán: <strong>{{ total | number:'1.0-0':'vi-VN' }}₫</strong>
+                </p>
+
+                <img class="bank-payment-qr"
+                    src="https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=BOXBITE_PAYMENT"
+                    alt="Mã QR chuyển khoản BOX&BITE" />
+
+                @if (bankPaymentConfirming) {
+                <p class="bank-payment-status mt-3 mb-0">Đang xác nhận ({{ bankPaymentCountdown }}s)</p>
+                }
+
+                <div class="bank-payment-actions mt-4">
+                    <button type="button" class="bank-cancel-btn" (click)="closeBankPaymentPopup()"
+                        [disabled]="bankPaymentConfirming">
+                        Hủy
+                    </button>
+                    <button type="button" class="checkout-btn" (click)="confirmBankPayment()"
+                        [disabled]="bankPaymentConfirming">
+                        {{ bankPaymentConfirming ? 'Đang xác nhận (' + bankPaymentCountdown + 's)' : 'Xác nhận' }}
+                    </button>
+                </div>
+            </div>
+        </div>
+        }
+
         @if (orderSuccessOpen) {
         <div class="order-success-backdrop">
             <div class="order-success-dialog text-center">
