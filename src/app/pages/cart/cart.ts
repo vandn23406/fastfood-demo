@@ -38,12 +38,17 @@ export class Cart implements OnInit {
   phoneNumber = '';
   deliveryTimeSlot = 'Ngay lập tức';
   deliveryAddress = '';
-  paymentMethod: 'cod' | 'bank' = 'cod';
+  paymentMethod: 'momo' | 'zalopay' | 'qr' | 'cod' = 'cod';
   checkoutMessage = '';
   checkoutAttempted = false;
   bankPaymentOpen = false;
   bankPaymentConfirming = false;
   bankPaymentCountdown = 3;
+  ewalletMethod: 'momo' | 'zalopay' | null = null;
+  ewalletProcessingOpen = false;
+  ewalletGatewayOpen = false;
+  ewalletGatewayConfirming = false;
+  ewalletOrderCode = '';
   orderSuccessOpen = false;
 
   readonly defaultDeliveryFee = 15000;
@@ -54,6 +59,8 @@ export class Cart implements OnInit {
   private allProducts: ProductItem[] = [];
   private allCombos: ComboItem[] = [];
   private bankPaymentTimer?: ReturnType<typeof setInterval>;
+  private ewalletProcessingTimer?: ReturnType<typeof setTimeout>;
+  private ewalletConfirmTimer?: ReturnType<typeof setTimeout>;
 
   get subtotal(): number {
     return this.cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
@@ -92,6 +99,7 @@ export class Cart implements OnInit {
 
   ngOnDestroy(): void {
     this.clearBankPaymentTimer();
+    this.clearEwalletTimers();
   }
 
   get deliveryFee(): number {
@@ -205,7 +213,12 @@ export class Cart implements OnInit {
 
     this.checkoutMessage = '';
 
-    if (this.paymentMethod === 'bank') {
+    if (this.paymentMethod === 'momo' || this.paymentMethod === 'zalopay') {
+      this.openEwalletFlow(this.paymentMethod);
+      return;
+    }
+
+    if (this.paymentMethod === 'qr') {
       this.openBankPaymentPopup();
       return;
     }
@@ -216,8 +229,13 @@ export class Cart implements OnInit {
 
   completeOrder(): void {
     this.clearBankPaymentTimer();
+    this.clearEwalletTimers();
     this.bankPaymentOpen = false;
     this.bankPaymentConfirming = false;
+    this.ewalletProcessingOpen = false;
+    this.ewalletGatewayOpen = false;
+    this.ewalletGatewayConfirming = false;
+    this.ewalletMethod = null;
     this.orderSuccessOpen = false;
     this.requestClose.emit();
     this.router.navigate(['/home']);
@@ -261,6 +279,35 @@ export class Cart implements OnInit {
       this.clearCartAfterSuccess();
       this.orderSuccessOpen = true;
     }, 1000);
+  }
+
+  cancelEwalletFlow(): void {
+    if (this.ewalletGatewayConfirming) {
+      return;
+    }
+
+    this.clearEwalletTimers();
+    this.ewalletProcessingOpen = false;
+    this.ewalletGatewayOpen = false;
+    this.ewalletMethod = null;
+  }
+
+  confirmEwalletPayment(): void {
+    if (!this.ewalletGatewayOpen || this.ewalletGatewayConfirming) {
+      return;
+    }
+
+    this.ewalletGatewayConfirming = true;
+    this.clearEwalletTimers();
+
+    this.ewalletConfirmTimer = setTimeout(() => {
+      this.ewalletGatewayOpen = false;
+      this.ewalletProcessingOpen = false;
+      this.ewalletGatewayConfirming = false;
+      this.ewalletMethod = null;
+      this.clearCartAfterSuccess();
+      this.orderSuccessOpen = true;
+    }, 1200);
   }
 
   get isCustomerNameInvalid(): boolean {
@@ -320,6 +367,38 @@ export class Cart implements OnInit {
 
     clearInterval(this.bankPaymentTimer);
     this.bankPaymentTimer = undefined;
+  }
+
+  private openEwalletFlow(method: 'momo' | 'zalopay'): void {
+    this.clearEwalletTimers();
+    this.ewalletMethod = method;
+    this.ewalletOrderCode = this.generateOrderCode();
+    this.ewalletProcessingOpen = true;
+    this.ewalletGatewayOpen = false;
+    this.ewalletGatewayConfirming = false;
+
+    this.ewalletProcessingTimer = setTimeout(() => {
+      this.ewalletProcessingOpen = false;
+      this.ewalletGatewayOpen = true;
+    }, 2000);
+  }
+
+  private clearEwalletTimers(): void {
+    if (this.ewalletProcessingTimer) {
+      clearTimeout(this.ewalletProcessingTimer);
+      this.ewalletProcessingTimer = undefined;
+    }
+
+    if (this.ewalletConfirmTimer) {
+      clearTimeout(this.ewalletConfirmTimer);
+      this.ewalletConfirmTimer = undefined;
+    }
+  }
+
+  private generateOrderCode(): string {
+    const timestampPart = Date.now().toString().slice(-6);
+    const randomPart = Math.floor(Math.random() * 900 + 100);
+    return `BB${timestampPart}${randomPart}`;
   }
 
   private clearCartAfterSuccess(): void {

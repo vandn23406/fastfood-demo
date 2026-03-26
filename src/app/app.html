@@ -5,5 +5,21 @@
         <router-outlet></router-outlet>
     </main>
 
+    <div class="floating-actions" aria-label="Thao tác nhanh">
+        <a href="tel:0918829492" class="floating-call" aria-label="Gọi ngay Box and Bite">
+            <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+        </a>
+
+        <a href="https://www.facebook.com/profile.php?id=61565130136570" class="floating-messenger"
+            aria-label="Nhắn tin qua Messenger" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-messenger" aria-hidden="true"></i>
+        </a>
+
+        <button type="button" class="floating-top" (click)="scrollToTop()" aria-label="Lên đầu trang">
+            <i class="bi bi-arrow-up-circle-fill" aria-hidden="true"></i>
+            <span>Lên đầu</span>
+        </button>
+    </div>
+
     <app-footer></app-footer>
 </div>

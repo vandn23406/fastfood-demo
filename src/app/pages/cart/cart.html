@@ -186,13 +186,23 @@
                         <p class="payment-title mb-2">Phương thức thanh toán</p>
 
                         <label class="pay-option mb-2">
-                            <input type="radio" name="payment" [(ngModel)]="paymentMethod" value="cod" />
-                            <span>Thanh toán khi nhận hàng</span>
+                            <input type="radio" name="payment" [(ngModel)]="paymentMethod" value="momo" />
+                            <span>MoMo</span>
+                        </label>
+
+                        <label class="pay-option mb-2">
+                            <input type="radio" name="payment" [(ngModel)]="paymentMethod" value="zalopay" />
+                            <span>ZaloPay</span>
+                        </label>
+
+                        <label class="pay-option mb-2">
+                            <input type="radio" name="payment" [(ngModel)]="paymentMethod" value="qr" />
+                            <span>Quét QR</span>
                         </label>
 
                         <label class="pay-option">
-                            <input type="radio" name="payment" [(ngModel)]="paymentMethod" value="bank" />
-                            <span>Chuyển khoản</span>
+                            <input type="radio" name="payment" [(ngModel)]="paymentMethod" value="cod" />
+                            <span>COD (Thanh toán khi nhận hàng)</span>
                         </label>
                     </div>
 
@@ -233,6 +243,59 @@
                     <button type="button" class="checkout-btn" (click)="confirmBankPayment()"
                         [disabled]="bankPaymentConfirming">
                         {{ bankPaymentConfirming ? 'Đang xác nhận (' + bankPaymentCountdown + 's)' : 'Xác nhận' }}
+                    </button>
+                </div>
+            </div>
+        </div>
+        }
+
+        @if (ewalletProcessingOpen && ewalletMethod) {
+        <div class="bank-payment-backdrop">
+            <div class="bank-payment-dialog ewallet-processing-dialog" role="dialog" aria-modal="true"
+                aria-label="Đang chuyển đến cổng thanh toán" (click)="$event.stopPropagation()">
+                <h3 class="mb-2">Đang chuyển đến cổng thanh toán...</h3>
+                <p class="bank-payment-note mb-3">Vui lòng không tắt trình duyệt</p>
+
+                <img class="ewallet-logo"
+                    [src]="ewalletMethod === 'momo' ? '/logo/Logo-MoMo.webp' : '/logo/Logo-ZaloPay.webp'"
+                    [alt]="ewalletMethod === 'momo' ? 'Logo MoMo' : 'Logo ZaloPay'" />
+
+                <p class="ewallet-processing-status mb-0 mt-3">⏳ Đang xử lý...</p>
+            </div>
+        </div>
+        }
+
+        @if (ewalletGatewayOpen && ewalletMethod) {
+        <div class="bank-payment-backdrop" (click)="cancelEwalletFlow()">
+            <div class="bank-payment-dialog" role="dialog" aria-modal="true"
+                [attr.aria-label]="ewalletMethod === 'momo' ? 'Thanh toán MoMo' : 'ZaloPay Payment'"
+                (click)="$event.stopPropagation()">
+
+                @if (ewalletMethod === 'momo') {
+                <h3 class="mb-2">Thanh toán MoMo</h3>
+                <p class="bank-payment-note mb-1"><strong>BOX &amp; BITE</strong></p>
+                <p class="bank-payment-note mb-1">Số tiền: <strong>{{ total | number:'1.0-0':'vi-VN' }}₫</strong></p>
+                <p class="bank-payment-note mb-3">Mã đơn: <strong>#{{ ewalletOrderCode }}</strong></p>
+                }
+
+                @if (ewalletMethod === 'zalopay') {
+                <h3 class="mb-2">ZaloPay Payment</h3>
+                <p class="bank-payment-note mb-1">Đơn hàng: <strong>#{{ ewalletOrderCode }}</strong></p>
+                <p class="bank-payment-note mb-3">Số tiền: <strong>{{ total | number:'1.0-0':'vi-VN' }}₫</strong></p>
+                }
+
+                @if (ewalletGatewayConfirming) {
+                <p class="bank-payment-status mt-3 mb-0">Đang xác nhận giao dịch...</p>
+                }
+
+                <div class="bank-payment-actions mt-4">
+                    <button type="button" class="bank-cancel-btn" (click)="cancelEwalletFlow()"
+                        [disabled]="ewalletGatewayConfirming">
+                        Hủy
+                    </button>
+                    <button type="button" class="checkout-btn" (click)="confirmEwalletPayment()"
+                        [disabled]="ewalletGatewayConfirming">
+                        {{ ewalletMethod === 'momo' ? 'Xác nhận thanh toán' : 'Thanh toán ngay' }}
                     </button>
                 </div>
             </div>

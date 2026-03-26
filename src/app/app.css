@@ -17,9 +17,168 @@
     width: 100%;
 }
 
+.floating-actions {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 1200;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.floating-call,
+.floating-messenger,
+.floating-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 999px;
+    padding: 0.62rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    border: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-call {
+    width: 52px;
+    height: 52px;
+    justify-content: center;
+    padding: 0;
+    background: linear-gradient(135deg, #f28b3a, #d65a2f 58%, #b33d23);
+    box-shadow: 0 12px 28px rgba(179, 61, 35, 0.42);
+    animation: callShake 1.3s ease-in-out infinite;
+}
+
+.floating-messenger {
+    width: 52px;
+    height: 52px;
+    justify-content: center;
+    padding: 0;
+    background: linear-gradient(135deg, #1f7aff, #0064f7 58%, #0050cc);
+    box-shadow: 0 12px 26px rgba(0, 100, 247, 0.4);
+    animation: messengerShake 1.3s ease-in-out infinite;
+}
+
+.floating-top {
+    background: linear-gradient(135deg, #993d29, #b84d34);
+    box-shadow: 0 10px 22px rgba(153, 61, 41, 0.35);
+}
+
+.floating-call:hover,
+.floating-messenger:hover,
+.floating-top:hover {
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+.floating-call:hover {
+    box-shadow: 0 16px 32px rgba(179, 61, 35, 0.56);
+}
+
+.floating-messenger:hover {
+    box-shadow: 0 16px 32px rgba(0, 100, 247, 0.56);
+}
+
+.floating-call .bi,
+.floating-messenger .bi,
+.floating-top .bi {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+@keyframes callShake {
+    0% {
+        box-shadow: 0 12px 28px rgba(179, 61, 35, 0.42);
+        transform: rotate(0deg);
+    }
+
+    15% {
+        transform: rotate(-11deg);
+    }
+
+    30% {
+        transform: rotate(10deg);
+    }
+
+    45% {
+        transform: rotate(-8deg);
+    }
+
+    60% {
+        transform: rotate(6deg);
+    }
+
+    75% {
+        transform: rotate(-3deg);
+    }
+
+    100% {
+        box-shadow: 0 12px 34px rgba(242, 139, 58, 0.58);
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes messengerShake {
+    0% {
+        box-shadow: 0 12px 26px rgba(0, 100, 247, 0.4);
+        transform: rotate(0deg);
+    }
+
+    15% {
+        transform: rotate(-11deg);
+    }
+
+    30% {
+        transform: rotate(10deg);
+    }
+
+    45% {
+        transform: rotate(-8deg);
+    }
+
+    60% {
+        transform: rotate(6deg);
+    }
+
+    75% {
+        transform: rotate(-3deg);
+    }
+
+    100% {
+        box-shadow: 0 12px 32px rgba(31, 122, 255, 0.58);
+        transform: rotate(0deg);
+    }
+}
+
 @media (max-width: 767.98px) {
     .app-shell {
         --header-offset: 130px;
         padding-top: var(--header-offset);
+    }
+
+    .floating-call,
+    .floating-messenger,
+    .floating-top {
+        padding: 0.68rem 0.95rem;
+        gap: 6px;
+    }
+
+    .floating-call,
+    .floating-messenger {
+        width: 50px;
+        height: 50px;
+        padding: 0;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .floating-actions {
+        right: 14px;
+        bottom: 14px;
     }
 }

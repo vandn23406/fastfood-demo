@@ -291,6 +291,23 @@
     font-weight: 700;
 }
 
+.ewallet-processing-dialog {
+    text-align: center;
+}
+
+.ewallet-logo {
+    width: min(140px, 70%);
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.ewallet-processing-status {
+    color: var(--secondary);
+    font-weight: 700;
+}
+
 .bank-payment-actions {
     display: grid;
     grid-template-columns: 1fr 1fr;

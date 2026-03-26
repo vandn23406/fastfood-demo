@@ -15,4 +15,15 @@ registerLocaleData(localeVi);
 })
 export class App {
   protected readonly title = signal('my-app');
+
+  scrollToTop(): void {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
 }

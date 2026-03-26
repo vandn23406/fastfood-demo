@@ -8,16 +8,18 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: minmax(280px, 1fr) auto minmax(140px, 1fr);
+    align-items: flex-start;
+    column-gap: 24px;
+    row-gap: 12px;
 }
 
 .footer-contact {
     display: flex;
     flex-direction: column;
     gap: 6px;
+    min-width: 0;
 }
 
 .footer-line {
@@ -50,6 +52,61 @@
     display: flex;
     align-items: center;
     gap: 12px;
+    justify-content: flex-end;
+    justify-self: end;
+}
+
+.footer-partners {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    justify-self: center;
+    transform: translateX(14px);
+}
+
+.partners-title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0.92;
+}
+
+.partner-row {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.partner-text {
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.partner-logo {
+    width: auto;
+    height: 24px;
+    object-fit: contain;
+    display: block;
+}
+
+.partner-qr {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 6px;
+}
+
+.partner-qr .bi {
+    font-size: 15px;
+    line-height: 1;
 }
 
 .social-link {
@@ -87,6 +144,7 @@
 
 @media (max-width: 768px) {
     .footer-container {
+        display: flex;
         flex-direction: column;
         align-items: flex-start;
     }
@@ -98,6 +156,20 @@
 
     .footer-social {
         width: 100%;
+        justify-content: flex-start;
+    }
+
+    .footer-partners {
+        width: 100%;
+        align-items: flex-start;
+        gap: 8px;
+        justify-self: auto;
+        transform: none;
+    }
+
+    .partner-row {
+        width: 100%;
+        gap: 6px;
         justify-content: flex-start;
     }
 }
@@ -114,5 +186,14 @@
     .social-link {
         width: 38px;
         height: 38px;
+    }
+
+    .partner-logo {
+        height: 22px;
+    }
+
+    .partner-qr {
+        width: 22px;
+        height: 22px;
     }
 }

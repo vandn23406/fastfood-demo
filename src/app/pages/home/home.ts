@@ -215,6 +215,17 @@ export class Home {
     });
   }
 
+  scrollToTop(): void {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
+
   get hasMoreMenuProducts(): boolean {
     return this.displayedMenuProducts.length < this.allMenuProducts.length;
   }

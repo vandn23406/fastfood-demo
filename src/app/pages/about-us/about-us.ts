@@ -9,11 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AboutUs {
   readonly introduction = {
-    businessModel: 'Cửa hàng đồ ăn nhanh kết hợp phục vụ tại chỗ và giao hàng trực tuyến.',
-    targetCustomers: 'Học sinh, sinh viên, nhân viên văn phòng và gia đình trẻ tại khu vực đô thị.',
-    productCategories: 'Burger, gà rán, mỳ Ý, khoai chiên, đồ uống, món tráng miệng và combo tiết kiệm.',
+    businessModel: 'Thương hiệu đồ ăn nhanh phục vụ đa kênh, kết hợp trải nghiệm tại cửa hàng và đặt món trực tuyến.',
+    targetCustomers: 'Khách hàng bận rộn tại đô thị: nhân viên văn phòng, gia đình trẻ và nhóm bạn cần bữa ăn nhanh, tiện lợi.',
+    productCategories: 'Burger, gà rán, mỳ Ý, khoai chiên, đồ uống, món tráng miệng và các combo tối ưu chi phí.',
     slogan: 'BOX & BITE - Ngon nhanh, trọn vị.',
-    salesChannels: 'Bán trực tiếp tại cửa hàng, đặt món qua website và các nền tảng giao đồ ăn.',
+    salesChannels: 'Phục vụ tại cửa hàng, đặt món qua website và liên kết nền tảng giao đồ ăn phổ biến.',
   };
 
   readonly logoInfo = {
@@ -31,30 +31,30 @@ export class AboutUs {
   };
 
   readonly vision = [
-    'BOX & BITE hướng đến trở thành cửa hàng đồ ăn nhanh được giới trẻ tin chọn, nổi bật với sự đa dạng trong lựa chọn sốt, mức giá phù hợp và trải nghiệm đặt món tiện lợi trên nền tảng thương mại điện tử. Cửa hàng mong muốn xây dựng hình ảnh một thương hiệu trẻ trung, năng động, đáp ứng nhanh nhu cầu ăn uống hiện đại nhưng vẫn đảm bảo chất lượng.',
-    'Trong dài hạn, BOX & BITE đặt mục tiêu phát triển mô hình kinh doanh đồ ăn nhanh an toàn, dễ tiếp cận và khác biệt thông qua các combo linh hoạt, giúp khách hàng vừa tiết kiệm chi phí vừa có nhiều lựa chọn phù hợp với nhu cầu cá nhân.'
+    'Trở thành thương hiệu đồ ăn nhanh được tin chọn tại TP.HCM, nổi bật bởi chất lượng ổn định, tốc độ phục vụ nhanh và trải nghiệm đặt món thuận tiện.',
+    'Mở rộng hiện diện theo hướng bền vững, tập trung tối ưu sản phẩm, vận hành và dịch vụ để mỗi lần khách hàng chọn BOX & BITE đều là một lựa chọn đáng tin cậy.',
   ];
 
   readonly mission = [
-    'BOX & BITE cam kết mang đến cho khách hàng những món ăn nhanh chất lượng, giá cả hợp lý, được chế biến từ nguyên liệu đảm bảo an toàn vệ sinh thực phẩm. Cửa hàng chú trọng đa dạng hóa các loại sốt ăn kèm, tạo nên trải nghiệm ẩm thực phong phú và khác biệt so với các cửa hàng đồ ăn nhanh cùng phân khúc.',
-    'Bên cạnh đó, BOX & BITE không ngừng tối ưu các combo ưu đãi, quy trình đặt hàng và giao nhận nhằm giúp khách hàng dễ dàng thưởng thức món ăn ngon, tiện lợi và tiết kiệm, đồng thời nâng cao trải nghiệm mua sắm trực tuyến.',
+    'Duy trì chất lượng món ăn đồng nhất thông qua nguyên liệu được chọn lọc, quy trình chế biến rõ ràng và tiêu chuẩn an toàn thực phẩm nghiêm ngặt.',
+    'Không ngừng cải thiện trải nghiệm khách hàng từ đặt món, thanh toán đến giao nhận để hành trình mua hàng luôn nhanh, minh bạch và thuận tiện.',
   ];
 
   readonly productOverview = {
     summary:
-      'Danh mục sản phẩm của BOX & BITE tập trung vào các món ăn nhanh phổ biến, dễ tiếp cận và phù hợp khẩu vị số đông. Các combo được thiết kế linh hoạt để khách hàng dễ lựa chọn theo nhu cầu no nhanh hoặc no nê.',
+      'Danh mục sản phẩm được xây dựng theo nhu cầu thực tế của khách hàng thành thị: dễ chọn, dễ ăn, dễ đặt. Các combo được thiết kế linh hoạt cho cá nhân, nhóm bạn và gia đình.',
     highlights: [
-      'Món ăn chế biến nhanh nhưng vẫn đảm bảo hương vị và độ tươi mới.',
-      'Nhiều mức giá từ món lẻ đến combo tiết kiệm cho nhóm khách hàng khác nhau.',
-      'Tùy chọn topping, sốt và kích cỡ giúp cá nhân hóa trải nghiệm ăn uống.',
-      'Dễ đóng gói, tiện mang đi, phù hợp nhịp sống bận rộn tại đô thị.',
+      'Hương vị ổn định giữa các lần mua nhờ quy trình chuẩn hóa.',
+      'Danh mục giá linh hoạt từ món lẻ đến combo tối ưu ngân sách.',
+      'Tùy chọn sốt, topping và khẩu phần giúp cá nhân hóa bữa ăn.',
+      'Đóng gói gọn gàng, phù hợp ăn tại chỗ, mang đi hoặc giao tận nơi.',
     ],
   };
 
   readonly reasons = [
-    'Phù hợp xu hướng thị trường đồ ăn nhanh và nhu cầu tiêu dùng hiện đại.',
-    'Phù hợp mô hình kinh doanh nhờ tốc độ chế biến nhanh và vận hành linh hoạt.',
-    'Có tiềm năng phát triển cao khi kết hợp bán tại cửa hàng và bán online.',
+    'Đáp ứng đúng xu hướng tiêu dùng nhanh, tiện và rõ thông tin sản phẩm.',
+    'Phù hợp vận hành đa kênh, giúp rút ngắn thời gian phục vụ khách hàng.',
+    'Tạo lợi thế cạnh tranh nhờ kết hợp hiệu quả giữa cửa hàng vật lý và nền tảng trực tuyến.',
   ];
 
 }
