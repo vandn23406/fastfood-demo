@@ -60,5 +60,33 @@ Ghé ngay Box & Bite.
 Thưởng thức Burger ngập nhân, Gà rán giòn tan với giá "hạt dẻ".
 Mời ngay hội bạn thân qua "đánh chén" để bật mood học tập ngay thôi nào! 🍔🍗🥤
 `
+    },
+    {
+        title: " 🎉🎉 CHÀO ĐÓN KHUNG GIỜ VÀNG - HAPPY HOUR 🎉🎉",
+        price: "Giảm ngay 10% TOÀN BỘ menu",
+        image: '/assets/images/PR004.png',
+        desc: `
+GIẢM NGAY 10% cho tất cả các món ăn siêu hấp dẫn khi bạn đến thưởng thức tại nhà hàng BOX & BITE vào khung giờ đặc biệt:
+
+🕒 13H - 16H HÀNG NGAY 🕒
+
+Hãy tưởng tượng, vào giờ nghỉ trưa, bạn có thể thưởng thức những miếng Gà Rán Giòn Rụm, đĩa Mỳ Gà Kem Ngậy béo, hay chiếc Burger Bò Phô Mai Chảy béo ngậy cùng khoai tây chiên vàng ươm... tất cả đều được GIẢM NGAY 10%!
+
+Đây là cơ hội tuyệt vời để:
+
+Đổi vị cho bữa trưa thêm phần thú vị và tràn đầy năng lượng.
+
+Tụ tập bạn bè, đồng nghiệp mà không lo về giá.
+
+Thỏa sức khám phá thực đơn đa dạng và "gây nghiện" của BOX & BITE.
+
+Chương trình áp dụng cho:
+
+Phục vụ tại chỗ.
+
+Menu các món ăn chính (Không áp dụng cho thức uống và các set combo).
+
+Đừng bỏ lỡ "Khung Giờ Vàng" để được ăn ngon mà vẫn tiết kiệm. Lên lịch ngay hôm nay và rủ hội cạ cứng đến BOX & BITE thôi nào!
+`
     }
 ];
