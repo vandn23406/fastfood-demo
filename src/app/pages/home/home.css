@@ -16,10 +16,9 @@
 }
 
 .hero-section {
-    background:
-        radial-gradient(circle at 76% 34%, rgba(255, 186, 128, 0.5) 0%, rgba(255, 186, 128, 0.22) 34%, rgba(255, 186, 128, 0.08) 54%, transparent 70%),
-        linear-gradient(105deg, rgba(61, 22, 14, 0.48) 0%, rgba(61, 22, 14, 0.16) 40%, rgba(61, 22, 14, 0) 72%),
-        linear-gradient(180deg, #8d3526 0%, #a3482f 26%, #bf6640 52%, #dca77b 76%, var(--bg) 100%);
+    position: relative;
+    z-index: 1;
+    background: transparent;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -28,8 +27,22 @@
     padding-bottom: 3.2rem !important;
 }
 
+.hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0; 
+    background-image: url('/assets/images/food-pattern.jpeg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    z-index: -1;
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
 .hero-tag {
-    color: #ffe2bf;
+    color: #6B4226;
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
@@ -37,16 +50,16 @@
 
 .hero-title {
     font-size: clamp(2rem, 3.2vw, 3.1rem);
-    color: #fff7eb;
+    color: #333;
     font-weight: 800;
     line-height: 1.16;
-    text-shadow: 0 8px 20px rgba(56, 20, 12, 0.35);
+    text-shadow: none;
 }
 
 .hero-subtitle {
     font-size: 1.05rem;
     max-width: 560px;
-    color: #f5d7b7;
+    color: rgba(62, 27, 18, 0.85);
 }
 
 .btn {
@@ -104,25 +117,44 @@
     left: 50%;
     transform: translate(-50%, -50%);
     pointer-events: none;
+    display: none;
 }
 
 .hero-visual {
     position: relative;
     display: grid;
     place-items: center;
-    overflow: visible;
-    background: transparent;
-    box-shadow: none;
-    min-height: 500px;
+    background-color: #f16d24; 
+    box-shadow: 0 24px 48px rgba(241, 109, 36, 0.3);
+    border-radius: 32px; 
+    width: min(100%, 380px);
+    aspect-ratio: 4 / 5;
+    margin: 0 auto; 
+    margin-top: -3.5rem;
+}
+
+.hero-visual::after {
+    content: '';
+    position: absolute;
+    inset: 16px; 
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero-food::before {
+    display: none; 
 }
 
 .hero-slider {
     position: relative;
     z-index: 1;
-    width: min(120%, 760px);
+    width: min(130%, 600px);
     height: min(620px, 72vw);
     max-height: 620px;
-    overflow: hidden;
+    overflow: visible;
+    padding-top: calc(var(--header-offset, 94px) + 2rem);
 }
 
 .hero-image {

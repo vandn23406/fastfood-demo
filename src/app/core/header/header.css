@@ -1,5 +1,5 @@
 .site-header {
-    --header-solid-bg: linear-gradient(140deg, rgba(153, 61, 41, 0.92), rgba(216, 139, 46, 0.9));
+    --header-solid-bg: rgba(243, 237, 214, 0.95);
     --header-offset: 94px;
     color: #ffffff;
     position: fixed;
@@ -58,7 +58,7 @@
 .nav-link,
 .cart-link,
 .logo-link {
-    color: #ffffff;
+    color: #000000;
     text-decoration: none;
 }
 
@@ -68,6 +68,10 @@
     opacity: 0.95;
     white-space: nowrap;
     transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #f16d24 !important;
 }
 
 .nav-link:hover,
@@ -129,7 +133,7 @@
     flex-direction: column;
     line-height: 0.9;
     letter-spacing: 0.01em;
-    color: #EDE1CB;
+    color: #3e1b12;
     font-weight: 900;
     font-size: 1.05rem;
     text-transform: uppercase;
