@@ -30,7 +30,7 @@
 .hero-section::before {
     content: "";
     position: absolute;
-    inset: 0; 
+    inset: 0;
     background-image: url('/assets/images/food-pattern.jpeg');
     background-size: cover;
     background-position: center;
@@ -39,6 +39,23 @@
     pointer-events: none;
     -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
     mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+.hero-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    pointer-events: none;
+    z-index: 0;
+    background: linear-gradient(to bottom,
+            rgba(243, 237, 214, 0.5) 0%,
+            rgba(243, 237, 214, 0.24) 58%,
+            rgba(243, 237, 214, 0) 100%);
+    -webkit-backdrop-filter: blur(8px) saturate(105%);
+    backdrop-filter: blur(8px) saturate(105%);
 }
 
 .hero-tag {
@@ -124,19 +141,19 @@
     position: relative;
     display: grid;
     place-items: center;
-    background-color: #f16d24; 
-    box-shadow: 0 24px 48px rgba(241, 109, 36, 0.3);
-    border-radius: 32px; 
+    background: transparent;
+    box-shadow: none;
+    border-radius: 32px;
     width: min(100%, 380px);
     aspect-ratio: 4 / 5;
-    margin: 0 auto; 
+    margin: 0 auto;
     margin-top: -3.5rem;
 }
 
 .hero-visual::after {
-    content: '';
+    content: none;
     position: absolute;
-    inset: 16px; 
+    inset: 16px;
     border: 2px solid rgba(255, 255, 255, 0.35);
     border-radius: 20px;
     pointer-events: none;
@@ -144,7 +161,7 @@
 }
 
 .hero-food::before {
-    display: none; 
+    display: none;
 }
 
 .hero-slider {
@@ -168,7 +185,7 @@
     transition: opacity 500ms ease-in-out;
     background: transparent;
     filter:
-        drop-shadow(0 16px 24px rgba(62, 27, 18, 0.24)) drop-shadow(0 0 20px rgba(216, 139, 46, 0.28));
+        drop-shadow(0 24px 40px rgba(241, 109, 36, 0.48)) drop-shadow(0 10px 56px rgba(224, 139, 44, 0.34));
     backface-visibility: hidden;
     transform: translateY(0);
     will-change: opacity, transform, filter;
@@ -183,7 +200,7 @@
 .hero-visual:hover .hero-image.active {
     transform: translateY(-8px) scale(1.02);
     filter:
-        drop-shadow(0 22px 30px rgba(62, 27, 18, 0.3)) drop-shadow(0 0 28px rgba(216, 139, 46, 0.4));
+        drop-shadow(0 34px 56px rgba(241, 109, 36, 0.58)) drop-shadow(0 14px 72px rgba(224, 139, 44, 0.42));
 }
 
 @keyframes heroImageFloat {
